@@ -1,53 +1,69 @@
 <!DOCTYPE html>
-<html>
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>TimeCast</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <link rel="stylesheet" type="text/css" media="screen" href="../style/main.css"> -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js "
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo "
-    crossorigin="anonymous "></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js "
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 "
-    crossorigin="anonymous "></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js "
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM "
-    crossorigin="anonymous "></script>
-  <script defer src="/__/firebase/6.0.2/firebase-app.js"></script>
-  <!-- include only the Firebase features as you need -->
-  <script defer src="/__/firebase/6.0.2/firebase-auth.js"></script>
-  <script defer src="/__/firebase/6.0.2/firebase-database.js"></script>
-  <script defer src="/__/firebase/6.0.2/firebase-storage.js"></script>
-  <!-- initialize the SDK after all desired features are loaded -->
-  <script defer src="/__/firebase/init.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TimeCast</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
 
-
-  <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
-  <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
-  <div class="form-group">
-    <label for=""></label>
-    <input type="text" class="form-control" name="" id="address-search-bar" placeholder="Endereço">
-    <button type="submit" id="address-search">Find</button>
-    <select id="transport">
-      <option value="car">carro</option>
-      <option value="bicycle">bicicleta</option>
-      <option value="pedestrian">pedestre</option>
-    </select>
-  </div>
+    <section class="forms-section">
+        <div class="div-logo">
+            <img class="logo" src="logo.png" />
+        </div>
+        <div class="forms">
+            <div class="form-wrapper is-active">
+                <button type="button" class="switcher switcher-login">
+                    Login
+                    <span class="underline"></span>
+                </button>
+                <form class="form form-login">
+                    <fieldset>
+                        <legend>Por favor, acesse preenchendo seu email e senha.</legend>
+                        <div class="input-block">
+                            <label for="login-email">E-mail</label>
+                            <input id="login-email" type="email" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="login-password">senha</label>
+                            <input id="login-password" type="password" required>
+                        </div>
+                    </fieldset>
+                    <button type="submit" class="btn-login">Entrar</button>
+                </form>
+            </div>
+            <div class="form-wrapper">
+                <button type="button" class="switcher switcher-signup">
+                    Cadastrar-se
+                    <span class="underline"></span>
+                </button>
+                <form class="form form-signup">
+                    <fieldset>
+                        <legend>Por favor, preencha com seu email, senha e confirmação de senha para Cadastrar-se.
+                        </legend>
+                        <div class="input-block">
+                            <label for="signup-email">E-mail</label>
+                            <input id="signup-email" type="email" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="signup-password">Senha</label>
+                            <input id="signup-password" type="password" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="signup-password-confirm">Confirmar senha</label>
+                            <input id="signup-password-confirm" type="password" required>
+                        </div>
+                    </fieldset>
+                    <button type="submit" class="btn-signup">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-  <div style="width: 640px; height: 480px" id="mapContainer"></div>
-  <div id="dz-root"></div>
-
-  <script src="./src/app.js"></script>
-  <script src="https://files.deezer.com/js/min/dz.js"></script>
-
-  <script src="./src/podcasts.js"></script>
+    <script src="login-signup.js"></script>
 
 </body>
 
