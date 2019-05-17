@@ -16,14 +16,10 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js "
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM "
     crossorigin="anonymous "></script>
-  <!-- <script>
-    delete window.global;
-  </script> -->
   <script defer src="/__/firebase/6.0.2/firebase-app.js"></script>
   <!-- include only the Firebase features as you need -->
   <script defer src="/__/firebase/6.0.2/firebase-auth.js"></script>
   <script defer src="/__/firebase/6.0.2/firebase-database.js"></script>
-  <script defer src="/__/firebase/6.0.2/firebase-messaging.js"></script>
   <script defer src="/__/firebase/6.0.2/firebase-storage.js"></script>
   <!-- initialize the SDK after all desired features are loaded -->
   <script defer src="/__/firebase/init.js"></script>
@@ -38,11 +34,19 @@
     <label for=""></label>
     <input type="text" class="form-control" name="" id="address-search-bar" placeholder="Endereço">
     <button type="submit" id="address-search">Find</button>
+    <select id="transport">
+      <option value="car">carro</option>
+      <option value="bicycle">bicicleta</option>
+      <option value="pedestrian">pedestre</option>
+    </select>
   </div>
 
   <div style="width: 640px; height: 480px" id="mapContainer"></div>
+  <div id="dz-root"></div>
 
   <script src="./src/app.js"></script>
+  <script src="https://files.deezer.com/js/min/dz.js"></script>
+
   <script src="./src/podcasts.js"></script>
 
 </body>
