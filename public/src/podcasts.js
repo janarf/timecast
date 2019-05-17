@@ -26,21 +26,22 @@ async function getData(podcastId) {
 findMatchingTime().forEach(
   prom => {
     prom.then(response =>
-      response.data.forEach(elem => console.log(elem))
-    )
+      response.data.forEach(elem =>
+        elem
+        // console.log(elem)
+      ))
   })
+
 console.log(findMatchingTime())
 // listOfEpisodes('1833')
 // //
 
-// DZ.init({
-//     appId: '349024',
-//     channelUrl: 'http://localhost:8080/channel.html'
-// });
+DZ.init({
+  appId: '349024',
+  channelUrl: 'http://localhost:8080/channel.html'
+});
 
-// DZ.api('/podcast/1833/episodes', response => {
-//     console.log(response);
-// });
+
 
 
 // myPodcasts.forEach(async (podcastId) => {
