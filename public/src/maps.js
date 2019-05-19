@@ -133,10 +133,9 @@ $("#address-search-bar").keypress((e) => {
   if (e.which == 13) {
     $('.transport').removeClass('invisible');
     $(`#car`).addClass('transport-button--clicked').removeClass('transport-button');
-
-    getRoute('car');
-    $('#confirm').removeClass(disabled);
+    $('#confirm').removeClass('disabled');
     localStorage.setItem('transport', 'car');
+    getRoute('car');
   };
 });
 
