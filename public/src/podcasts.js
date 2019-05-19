@@ -10,7 +10,8 @@ function podcastsData(myPodcasts) {
   Promise.all(podcastPromise)
     .then(results => {
       const arrayEpisodes = results.reduce(flatten, [])
-      console.log(findMatchingTime(arrayEpisodes, 3600))
+      console.log(localStorage.getItem(localStorage.getItem('transport')))
+      console.log(findMatchingTime(arrayEpisodes, Number(localStorage.getItem(localStorage.getItem('transport')))))
     });
 }
 
@@ -22,16 +23,15 @@ function getData(podcastId) {
 
 function findMatchingTime(arrayEpisodes, time) {
   return arrayEpisodes.filter((episode) => {
-    return (episode.duration <= (time + 300) && episode.duration >= (time - 300))
+    return (episode.duration <= (time + 180) && episode.duration >= (time - 180))
   })
 }
 
-podcastsData(myPodcasts)
+$('#confirm').click(() => {
+  podcastsData(myPodcasts)
+})
 
-DZ.init({
-  appId: '349024',
-  channelUrl: 'http://localhost:8080/channel.html'
-});
+
 
 
 
