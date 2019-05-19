@@ -5,8 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>TimeCast</title>
+	
 	<link rel="stylesheet" type="text/css" media="screen" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700,700i&display=swap" rel="stylesheet">
+	
+	<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
 
 </head>
 
@@ -15,7 +20,7 @@
 		<div class="div-logo">
 			<img class="logo" src="assets/logo-neg-tcast.png" />
 		</div>
-		<article class="text-logo">Ouça um podecast e otimize seu tempo!</article>
+		<article class="text-logo">Ouça um podcast e otimize seu tempo!</article>
 		<div class="forms">
 			<div class="form-wrapper is-active">
 				<button type="button" class="switcher switcher-login btn-form">
@@ -47,16 +52,16 @@
 						<legend>Por favor, preencha com seu email, senha e confirmação de senha para Cadastrar-se.
 						</legend>
 						<div class="input-block">
-							<input id="signup-nome" type="text" placeholder="Nome" required>
+							<input id="signup-name" type="text" placeholder="Nome" required>
 							<!-- <label for="signup-nome">Nome</label> -->
-						</div>
-						<div class="input-block">
-							<input id="signup-email" type="email" placeholder="E-mail" required>
-							<!-- <label for="signup-email">E-mail</label> -->
 						</div>
 						<div class="input-block">
 							<input id="signup-city" type="text" placeholder="Cidade" required>
 							<!-- <label for="signup-city">Cidade</label> -->
+						</div>
+						<div class="input-block">
+							<input id="signup-email" type="email" placeholder="E-mail" required>
+							<!-- <label for="signup-email">E-mail</label> -->
 						</div>
 						<div class="input-block">
 							<input id="signup-password" type="password" placeholder="Senha (mínimo 6 caracteres)"
@@ -70,6 +75,7 @@
 		</div>
 	</section>
 
+	<script src="src/auth-signup.js"></script>
 	<script src="src/login-signup.js"></script>
 
 </body>
