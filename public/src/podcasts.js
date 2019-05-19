@@ -1,40 +1,32 @@
 // https://stackoverflow.com/questions/45483759/cannot-load-deezer-api-resources-from-localhost-with-the-fetch-api
-// const apiDeezer = `https://cors-anywhere.herokuapp.com/https://api.deezer.com`
+const flatten = (a, b) => [...a, ...b];
+const myPodcasts = [1833, 2939, 2785, 3161, 2045, 1773, 91, 4319, 65, 1653, 4363, 9153, 27, 8381, 9955];
 
-
-// function listOfEpisodes(idPodcast) {
-//     fetch(`${apiDeezer}`)
-//         .then(res => res.json()).then(res => console.log(res.data));
-// }
-// const myPodcasts = [1833, 2939, 2785, 3161, 2045, 1773, 91, 4319, 65, 1653, 4363, 9153, 27, 8381, 9955]
-const myPodcasts = [1833, 2939, 2785, 3161, 2045, 1773, 91, 4319, 65, 1653, 4363, 9153, 27, 8381, 9955]
-
-function findMatchingTime() {
-  const b = myPodcasts.map(async (podcastId) => {
-    const a = await getData(podcastId)
-    return a;
-  })
-  return (b)
+function podcastsData(myPodcasts) {
+  const podcastPromise = myPodcasts.map(async (podcastId) => {
+    const data = await getData(podcastId)
+    return data;
+  });
+  Promise.all(podcastPromise)
+    .then(results => {
+      const arrayEpisodes = results.reduce(flatten, [])
+      console.log(findMatchingTime(arrayEpisodes, 3600))
+    });
 }
 
-async function getData(podcastId) {
-  const a = await fetch(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/podcast/${podcastId}/episodes`)
-  const data = await a.json()
-  return data;
+function getData(podcastId) {
+  return fetch(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/podcast/${podcastId}/episodes`)
+    .then((response) => response.json())
+    .then(response => response.data)
 }
 
-findMatchingTime().forEach(
-  prom => {
-    prom.then(response =>
-      response.data.forEach(elem =>
-        elem
-        // console.log(elem)
-      ))
+function findMatchingTime(arrayEpisodes, time) {
+  return arrayEpisodes.filter((episode) => {
+    return (episode.duration <= (time + 300) && episode.duration >= (time - 300))
   })
+}
 
-console.log(findMatchingTime())
-// listOfEpisodes('1833')
-// //
+podcastsData(myPodcasts)
 
 DZ.init({
   appId: '349024',
@@ -44,25 +36,4 @@ DZ.init({
 
 
 
-// myPodcasts.forEach(async (podcastId) => {
-//     const data = await DZ.api(`/podcast/${podcastId}/episodes`,
-//         response => {
-//             a.push(response.data)
 
-//         });
-//     console.log("data", data)
-// });
-// console.log("newarray", a)
-
-// function getData() {
-//     let a = [];
-//     myPodcasts.forEach((podcastId) => {
-//         DZ.api(`/podcast/${podcastId}/episodes`,
-//             response => response.data)
-
-//     });
-//     return a
-// }
-// getData()
-
-// const flatten = (a, b) => [...a, ...b];
