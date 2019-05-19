@@ -105,7 +105,7 @@ var defaultLayers = platform.createDefaultLayers();
 let map = new H.Map(
   $('#mapContainer')[0],
   defaultLayers.normal.map, {
-    zoom: 13,
+    zoom: 14,
     center: { lat: localStorage.getItem("latitude"), lng: localStorage.getItem("longitude") }
   });
 var marker = new H.map.Marker({

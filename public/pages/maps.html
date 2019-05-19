@@ -42,56 +42,63 @@
 </head>
 
 <body class="white-bg">
-  <div>
-
-    <div class="position-absolute w-100 search-bar-div ">
-      <div class="mx-auto mt-2 search-bar ">
-        <i class="fas fa-map-marker-alt position-absolute icon-small ml-2"></i>
-        <input type="text" class="form-control position-relative pl-4" name="" id="address-search-bar"
-          placeholder="Digite aqui seu destino">
-      </div>
-    </div>
-  </div>
-
-  <div class="position-relative map-container " id="mapContainer"></div>
-  </div>
-  <section class="container w-100 invisible transport">
-    <div class="d-flex flex-row justify-content-around mx-2 ">
-      <div class=" px-3 py-2 transport-button" id="car">
-        <div class="d-flex flex-column">
-          <div class="align-self-bottom">
-            <div class="text-center">
-              <i class="fas fa-car"></i>
-            </div>
-            <p class="text-center m-0 p-0 time-text" id="car-time">00:00</p>
-          </div>
-        </div>
-      </div>
-      <div class=" px-3 py-2 transport-button" id="bicycle">
-        <div class="d-flex flex-column">
-          <div class="align-self-bottom">
-            <div class="text-center">
-              <i class="fas fa-bicycle"></i>
-            </div>
-            <p class="text-center m-0 p-0 time-text" id="bicycle-time">00:00</p>
-          </div>
-        </div>
-      </div>
-      <div class=" px-3 py-2 transport-button" id="pedestrian">
-        <div class="d-flex flex-column">
-          <div class="align-self-bottom">
-            <div class="text-center">
-              <i class="fas fa-walking"></i>
-            </div>
-            <p class="text-center m-0 p-0 time-text" id="pedestrian-time">00:00</p>
-          </div>
+  <div id="maps">
+    <div>
+      <div class="position-absolute w-100 search-bar-div ">
+        <div class="mx-auto mt-2 search-bar ">
+          <i class="fas fa-map-marker-alt position-absolute icon-small ml-2"></i>
+          <input type="text" class="form-control position-relative pl-4" name="" id="address-search-bar"
+            placeholder="Digite aqui seu destino">
         </div>
       </div>
     </div>
+
+    <div class="position-relative map-container " id="mapContainer"></div>
+    <section class="container w-100 invisible transport">
+      <div class="d-flex flex-row justify-content-around mx-2 ">
+        <div class=" px-3 py-2 transport-button" id="car">
+          <div class="d-flex flex-column">
+            <div class="align-self-bottom">
+              <div class="text-center">
+                <i class="fas fa-car"></i>
+              </div>
+              <p class="text-center m-0 p-0 time-text" id="car-time">00:00</p>
+            </div>
+          </div>
+        </div>
+        <div class=" px-3 py-2 transport-button" id="bicycle">
+          <div class="d-flex flex-column">
+            <div class="align-self-bottom">
+              <div class="text-center">
+                <i class="fas fa-bicycle"></i>
+              </div>
+              <p class="text-center m-0 p-0 time-text" id="bicycle-time">00:00</p>
+            </div>
+          </div>
+        </div>
+        <div class=" px-3 py-2 transport-button" id="pedestrian">
+          <div class="d-flex flex-column">
+            <div class="align-self-bottom">
+              <div class="text-center">
+                <i class="fas fa-walking"></i>
+              </div>
+              <p class="text-center m-0 p-0 time-text" id="pedestrian-time">00:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <button type="submit" class="btn btn-success btn-lg btn-block w-75 mx-auto mt-4 disabled btn-confirm"
+      id="confirm">Confirmar</button>
+  </div>
+
+  <div class="d-none" id="sugestions">
+    <p class="m-0 text-center">Aproveite <span id="time-sugestion"></span> :)</p>
+    <p class="bold-text text-center">Estas são nossas opções pra você:</p>
+  </div>
+  <section class="container" id="podcasts-container">
   </section>
-  <button type="submit" class="btn btn-success btn-lg btn-block w-75 mx-auto mt-4 disabled btn-confirm"
-    id="confirm">Confirmar</button>
-
   <div id="dz-root"></div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
   <script src="https://files.deezer.com/js/min/dz.js"></script>
