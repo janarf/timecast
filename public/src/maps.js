@@ -13,10 +13,12 @@ function getRouteTime(waypointString0, waypointString1) {
         .then(res => res.json())
         .then(res => {
           if (mean == 'car') {
+            localStorage.setItem(mean, res.response.route[0].summary.trafficTime);
             $(`#${mean}-time`).html(
               moment.utc(res.response.route[0].summary.trafficTime * 1000)
                 .format('HH:mm'))
           } else {
+            localStorage.setItem(mean, res.response.route[0].summary.baseTime)
             $(`#${mean}-time`).html(
               moment.utc(res.response.route[0].summary.baseTime * 1000)
                 .format('HH:mm'))
@@ -36,27 +38,6 @@ function getLocation() {
 function getPosition(userPosition) {
   localStorage.setItem("latitude", userPosition.coords.latitude)
   localStorage.setItem("longitude", userPosition.coords.longitude)
-}
-
-function createMap() {
-  $('#mapContainer').html();
-  var platform = new H.service.Platform({
-    'app_id': 'lT3yqAJmOo0tSCEDAY24',
-    'app_code': 'fd9_LnoGgmj6hkcLl2RhNQ'
-  });
-  var defaultLayers = platform.createDefaultLayers();
-  let map = new H.Map(
-    $('#mapContainer')[0],
-    defaultLayers.normal.map, {
-      zoom: 13,
-      center: { lat: localStorage.getItem("latitude"), lng: localStorage.getItem("longitude") }
-    });
-  var marker = new H.map.Marker({
-    lat: localStorage.getItem("latitude"),
-    lng: localStorage.getItem("longitude")
-  });
-  map.addObjects([marker])
-  var ui = H.ui.UI.createDefault(map, defaultLayers);
 }
 
 function getRoute(transportMean) {
@@ -117,7 +98,6 @@ function getRoute(transportMean) {
           alert(error.message);
         });
     })
-
 }
 
 
@@ -126,6 +106,7 @@ function searchDestiny() {
     e.preventDefault();
   })
 }
+
 getLocation()
 
 var platform = new H.service.Platform({
@@ -147,12 +128,17 @@ map.addObjects([marker])
 
 var ui = H.ui.UI.createDefault(map, defaultLayers);
 
-$("#address-search").on('click', (e) => {
-  e.preventDefault();
-  getRoute('car');
-  $(`#car`).addClass('transport-button--clicked').removeClass('transport-button')
 
-})
+$("#address-search-bar").keypress((e) => {
+  if (e.which == 13) {
+    $('.transport').removeClass('invisible');
+    $(`#car`).addClass('transport-button--clicked').removeClass('transport-button');
+
+    getRoute('car');
+    $('#confirm').removeClass(disabled);
+    localStorage.setItem('transport', 'car');
+  };
+});
 
 function addClickEventTransport(mean) {
   $(`#${mean}`).on('click', () => {
@@ -160,7 +146,7 @@ function addClickEventTransport(mean) {
       .forEach(otherMean => $(`#${otherMean}`)
         .addClass('transport-button')
         .removeClass('transport-button--clicked'));
-
+    localStorage.setItem('transport', mean)
     $(`#${mean}`).addClass('transport-button--clicked')
       .removeClass('transport-button');
 
@@ -169,5 +155,5 @@ function addClickEventTransport(mean) {
   })
 }
 
+transport.forEach(mean => addClickEventTransport(mean));
 
-transport.forEach(mean => addClickEventTransport(mean))

@@ -43,24 +43,36 @@
 
 <body>
   <div>
-    <div class="form-group">
-      <label for=""></label>
-      <input type="text" class="form-control" name="" value="R. Paes Leme, 195 - Pinheiros, São Paulo - SP"
-        id="address-search-bar" placeholder="Endereço">
 
+    <div class="position-absolute w-100 search-bar-div ">
+      <div class="mx-auto mt-2 search-bar ">
+        <i class="fas fa-map-marker-alt position-absolute icon-small ml-2"></i>
+        <input type="text" class="form-control position-relative pl-4" name="" id="address-search-bar"
+          placeholder="Digite aqui seu destino">
+      </div>
     </div>
 
-    <div class="map-container" id="mapContainer"></div>
+    <!-- <div class="">
+
+      <div class="input-container">
+        <i class="fa fa-user icon"></i>
+        <input class="input-field" type="text" placeholder="Username" name="usrnm">
+      </div> -->
+
+
   </div>
-  <section class="container w-100">
-    <div class="d-flex flex-row justify-content-around mx-2 transport">
+
+  <div class="position-relative map-container " id="mapContainer"></div>
+  </div>
+  <section class="container w-100 invisible transport">
+    <div class="d-flex flex-row justify-content-around mx-2 ">
       <div class=" px-3 py-2 transport-button" id="car">
         <div class="d-flex flex-column">
           <div class="align-self-bottom">
             <div class="text-center">
               <i class="fas fa-car"></i>
             </div>
-            <p class="text-center m-0 p-0 time-text" id="car-time">00:35 </p>
+            <p class="text-center m-0 p-0 time-text" id="car-time">00:00</p>
           </div>
         </div>
       </div>
@@ -70,7 +82,7 @@
             <div class="text-center">
               <i class="fas fa-bicycle"></i>
             </div>
-            <p class="text-center m-0 p-0 time-text" id="bicycle-time">00:45 </p>
+            <p class="text-center m-0 p-0 time-text" id="bicycle-time">00:00</p>
           </div>
         </div>
       </div>
@@ -80,13 +92,14 @@
             <div class="text-center">
               <i class="fas fa-walking"></i>
             </div>
-            <p class="text-center m-0 p-0 time-text" id="pedestrian-time">01:25 </p>
+            <p class="text-center m-0 p-0 time-text" id="pedestrian-time">00:00</p>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <button type="submit" id="address-search">Confirmar</button>
+  <button type="submit" class="btn btn-success btn-lg btn-block w-75 mx-auto mt-4 disabled btn-confirm"
+    id="confirm">Confirmar</button>
 
   <div id="dz-root"></div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
