@@ -6,8 +6,10 @@
 
 body {
 	margin: 0;
-	font-family: Roboto, -apple-system, 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
-	background: #f5f5f5;
+
+
+	font-family: 'Roboto', sans-serif;
+	background: #5f6372 ;
 }
 
 .forms-section {
@@ -15,14 +17,15 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	min-width: 260px;
 }
 
 .div-logo {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* width: 20em; */
-	height: 10em;
+	padding: 20px;
+	/* height: 10em; */
 }
 
 .logo {
@@ -30,12 +33,12 @@ body {
 	height: 5em;
 }
 
-/* .section-title {
-	font-size: 32px;
-	letter-spacing: 1px;
-    color: #19eea1;
-    text-align: center;
-} */
+.text-logo {
+	color: #f5f5f5;
+	margin-bottom: 10px;
+	margin-top: 0;
+	text-align: center;
+}
 
 .forms {
 	display: flex;
@@ -79,8 +82,8 @@ body {
 	text-transform: uppercase;
 	font-family: inherit;
 	font-size: 16px;
-	letter-spacing: .5px;
-	color: #999;
+	letter-spacing: 0.5px;
+	color: #f5f5f5;
 	background-color: transparent;
 	border: none;
 	outline: none;
@@ -152,28 +155,28 @@ body {
 @keyframes showLogin {
 	0% {
 		background: #d7e7f1;
-		transform: translate(40%, 10px);
+		transform: translate(10%, 5px);
 	}
 	50% {
 		transform: translate(0, 0);
 	}
 	100% {
 		background-color: #fff;
-		transform: translate(50%, -20px);
+		transform: translate(50%, -5px);
 	}
 }
 
 @keyframes hideLogin {
 	0% {
 		background-color: #fff;
-		transform: translate(35%, -20px);
+		transform: translate(35%, -5px);
 	}
 	50% {
 		transform: translate(0, 0);
 	}
 	100% {
 		background: #d7e7f1;
-		transform: translate(40%, 10px);
+		transform: translate(40%, 5px);
 	}
 }
 
@@ -188,10 +191,10 @@ body {
 @keyframes showSignup {
 	0% {
 		background: #d7e7f1;
-		transform: translate(-40%, 10px) scaleY(.8);
+		transform: translate(-40%, 10px) scaleY(0.8);
 	}
 	50% {
-		transform: translate(0, 0) scaleY(.8);
+		transform: translate(0, 0) scaleY(0.8);
 	}
 	100% {
 		background-color: #fff;
@@ -205,11 +208,11 @@ body {
 		transform: translate(-35%, -20px) scaleY(1);
 	}
 	50% {
-		transform: translate(0, 0) scaleY(.8);
+		transform: translate(0, 0) scaleY(0.8);
 	}
 	100% {
 		background: #d7e7f1;
-		transform: translate(-40%, 10px) scaleY(.8);
+		transform: translate(-40%, 10px) scaleY(0.8);
 	}
 }
 
@@ -233,7 +236,7 @@ body {
 .form-wrapper.is-active fieldset {
 	opacity: 1;
 	transform: translateX(0);
-	transition: opacity .4s ease-in, transform .35s ease-in;
+	transition: opacity 0.4s ease-in, transform 0.35s ease-in;
 }
 
 .form legend {
@@ -262,7 +265,7 @@ body {
 	font-size: 16px;
 	line-height: 40px;
 	color: #3b4465;
-  background: #eef9fe;
+  background: #f5f5f5;
   border: 1px solid #cddbef;
   border-radius: 2px;
 }
@@ -270,7 +273,7 @@ body {
 .form [type='submit'] {
 	opacity: 0;
 	display: block;
-	min-width: 120px;
+	min-width: 260px;
 	margin: 30px auto 10px;
 	font-size: 18px;
 	line-height: 40px;
@@ -288,12 +291,68 @@ body {
 .btn-login {
 	color: #5f6372;
 	background: #19eea1;
-	transform: translateX(-30%);
+	transform: translateX(-10%);
 }
 
 .btn-signup {
 	color: #5f6372;
 	background: #19eea1;
-	/* box-shadow: inset 0 0 0 2px #a7e245; */
-	transform: translateX(30%);
+	transform: translateX(10%);
+}
+
+/* JANA */
+.map-container {
+	width: 100%; 
+	height: 320px;
+}
+
+.search-bar-div{
+	z-index: 10;
+
+}
+.search-bar{
+	width: 85%;
+}
+
+.transport-button{
+	background-color: #DBEDE6;
+	color:#5f6372;
+	font-size: 20px;
+	font-weight: 700;
+}
+.transport-button--clicked{
+	color: #DBEDE6;
+	background-color:#5f6372;
+	font-size: 20px;
+	font-weight: 700;
+}
+.icon-size{
+	font-size:25px;
+}
+.icon-small{
+	z-index: 1000;
+	color:#5f6372;
+  top:40%;
+}
+
+.btn-confirm,
+.btn-confirm:active,
+.btn-confirm:focus {
+	
+	color: #5f6372;
+	background-color: #19eea1;
+	border: #19eea1;
+	font-weight: 700;
+	font-size: 12px;
+	text-transform: uppercase;
+	-webkit-box-shadow: 4px 3px 5px -1px rgba(0,0,0,0.52);
+-moz-box-shadow: 4px 3px 5px -1px rgba(0,0,0,0.52);
+box-shadow: 4px 3px 5px -1px rgba(0,0,0,0.52);
+}
+
+.white-bg{
+	background: #f5f5f5;
+}
+.bold-text{
+	font-weight: 700;
 }

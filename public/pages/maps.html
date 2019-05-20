@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>TimeCast</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+  <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+  <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+  <script src="http://js.api.here.com/v3/3.0/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" media="screen" href="../style.css">
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js "
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo "
+    crossorigin="anonymous "></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js "
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 "
+    crossorigin="anonymous "></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js "
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM "
+    crossorigin="anonymous "></script>
+  <script defer src="/__/firebase/6.0.2/firebase-app.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/6.0.2/firebase-auth.js"></script>
+  <script defer src="/__/firebase/6.0.2/firebase-database.js"></script>
+  <script defer src="/__/firebase/6.0.2/firebase-storage.js"></script>
+  <!-- initialize the SDK after all desired features are loaded -->
+  <script defer src="/__/firebase/init.js"></script>
+
+
+  <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+  <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body class="white-bg">
+  <div id="maps">
+    <div>
+      <div class="position-absolute w-100 search-bar-div ">
+        <div class="mx-auto mt-2 search-bar ">
+          <i class="fas fa-map-marker-alt position-absolute icon-small ml-2"></i>
+          <input type="text" class="form-control position-relative pl-4" name="" id="address-search-bar"
+            placeholder="Digite aqui seu destino">
+        </div>
+      </div>
+    </div>
+
+    <div class="position-relative map-container " id="mapContainer"></div>
+    <section class="container w-100 invisible transport">
+      <div class="d-flex flex-row justify-content-around mx-2 ">
+        <div class=" px-3 py-2 transport-button" id="car">
+          <div class="d-flex flex-column">
+            <div class="align-self-bottom">
+              <div class="text-center">
+                <i class="fas fa-car"></i>
+              </div>
+              <p class="text-center m-0 p-0 time-text" id="car-time">00:00</p>
+            </div>
+          </div>
+        </div>
+        <div class=" px-3 py-2 transport-button" id="bicycle">
+          <div class="d-flex flex-column">
+            <div class="align-self-bottom">
+              <div class="text-center">
+                <i class="fas fa-bicycle"></i>
+              </div>
+              <p class="text-center m-0 p-0 time-text" id="bicycle-time">00:00</p>
+            </div>
+          </div>
+        </div>
+        <div class=" px-3 py-2 transport-button" id="pedestrian">
+          <div class="d-flex flex-column">
+            <div class="align-self-bottom">
+              <div class="text-center">
+                <i class="fas fa-walking"></i>
+              </div>
+              <p class="text-center m-0 p-0 time-text" id="pedestrian-time">00:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <button type="submit" class="btn btn-success btn-lg btn-block w-75 mx-auto mt-4 disabled btn-confirm"
+      id="confirm">Confirmar</button>
+  </div>
+
+  <div class="d-none" id="sugestions">
+    <p class="m-0 text-center">Aproveite <span id="time-sugestion"></span> :)</p>
+    <p class="bold-text text-center">Estas são nossas opções pra você:</p>
+  </div>
+  <section class="container" id="podcasts-container">
+  </section>
+  <div id="dz-root"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  <script src="https://files.deezer.com/js/min/dz.js"></script>
+
+  <script src="../src/getlocation.js"></script>
+  <script src="../src/genreconst.js"></script>
+  <script src="../src/maps.js"></script>
+  <script src="../src/podcasts.js"></script>
+
+</body>
+
+</html>
