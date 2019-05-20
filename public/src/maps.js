@@ -101,8 +101,11 @@ function getRoute(transportMean) {
 getLocation();
 
 var platform = new H.service.Platform({
+  'useCIT': true,
   'app_id': 'lT3yqAJmOo0tSCEDAY24',
-  'app_code': 'fd9_LnoGgmj6hkcLl2RhNQ'
+  'app_code': 'fd9_LnoGgmj6hkcLl2RhNQ',
+  'useHTTPS': true
+
 });
 var defaultLayers = platform.createDefaultLayers();
 let map = new H.Map(
