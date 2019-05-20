@@ -10,7 +10,7 @@ let firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-const signIn = document.querySelector('.btn-login');
+const signIn = document.querySelector('.login-btn');
 signIn.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -29,7 +29,7 @@ signIn.addEventListener("click", (e) => {
   });
 });
 
-const signUp = document.querySelector(".btn-signup");
+const signUp = document.querySelector(".signup-btn");
 signUp.addEventListener("click", (e) => {
   e.preventDefault()
 
