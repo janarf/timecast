@@ -1,4 +1,4 @@
-let firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyDX3oh7iDQNyPIofhcOKmX_8dE-f9XrtIk",
   authDomain: "timecast-1557870834786.firebaseapp.com",
   databaseURL: "https://timecast-1557870834786.firebaseio.com",
@@ -13,35 +13,33 @@ firebase.initializeApp(firebaseConfig);
 $(document).ready(function () {
   $("#signup-btn").click(function () {
     event.preventDefault();
-    let name = $("#signup-name").val();
-    let email = $("#signup-email").val();
+    const name = $("#signup-name").val();
+    const email = $("#signup-email").val();
     console.log("foi", email)
-    let password = $("#signup-password").val();
+    const password = $("#signup-password").val();
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      // .then(() => {
-      //   const user = firebase.auth().currentUser
-      //     // user.updateProfile({
-      //     //   displayName: name,
-      //     //   photoURL: '',
-      //     // })
-
-      .then(() => window.location.href = "categories.html")
-      // })
+      .then(() => {
+        const user = firebase.auth().currentUser
+        user.updateProfile({
+          displayName: name
+        })
+          .then(() => window.location.href = "./pages/categories.html")
+      })
       .catch(error => $('#error-msg').text(error.message));
-    console.log(error)
   });
 
   $("#login-btn").click(function () {
-    let email = $("#login-email").val();
-    console.log("login email", email)
-    let password = $("#login-password").val();
+    event.preventDefault();
+    const email = $("#login-email").val();
+    console.log("sim", email)
+    const password = $("#login-password").val();
 
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then(() => window.location.href = "home.html")
+      .then(() => window.location.href = "./pages/home.html")
       .catch(error => $('#error-msg').text(error.message));
   });
 
@@ -49,7 +47,7 @@ $(document).ready(function () {
     firebase
       .auth()
       .signOut()
-      .then(() => window.location.href = "index.html");
-      .catch ((error) => alert('Ocorreu um erro, tente novamente.'));
-});
+      .then(() => window.location.href = "index.html")
+      .catch((error) => $('#error-msg').text(error.message));
+  });
 });
