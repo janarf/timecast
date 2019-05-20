@@ -71,6 +71,10 @@ body {
     color: white;
 }
 
+.nav {
+    padding: 0;
+}
+
 .nav-items{
     font-size: 1.3em;
 }
