@@ -11,6 +11,9 @@ body {
     font-size: 1em;
 }
 
+.btn-green:disabled{
+  background-color: #b6b6b6;
+}
 .border {
 	border-radius: 8px;
 }

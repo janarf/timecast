@@ -22,7 +22,7 @@ function addClickEventTransport(mean) {
 
 function confirmSearch() {
   $('.transport').removeClass('invisible');
-  $('#confirm').removeClass('d-none');
+  $('#confirm').attr('disabled', false);
   $('#car').addClass('transport-button--clicked').removeClass('transport-button');
   localStorage.setItem('transport', 'car');
   getRoute('car');
