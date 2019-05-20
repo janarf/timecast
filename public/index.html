@@ -2,13 +2,13 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>TimeCast</title>
-	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 	<link rel="stylesheet" type="text/css" media="screen" href="style.css">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700,700i&display=swap" rel="stylesheet">
-	
+
 	<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
@@ -16,68 +16,71 @@
 </head>
 
 <body>
-	<section class="forms-section">
-		<div class="div-logo">
-			<img class="logo" src="assets/logo-neg-tcast.png" />
+    <div class="container-fluid">
+	
+        <div class="row justify-content-center py-4">
+            <div class="col-10 col-sm-6 col-lg-4 mb-2">
+                <img class="img-fluid" src="assets/logo-tcast.png" />
+            </div>
+
+            <div class="col-12 text-center">
+                <article class="text-subtitle">Ouça um podcast e otimize seu tempo!</article>
+            </div>
 		</div>
-		<article class="text-logo">Ouça um podcast e otimize seu tempo!</article>
-		<div class="forms">
-			<div class="form-wrapper is-active">
-				<button type="button" class="switcher switcher-login btn-form">
-					Login
-					<span class="underline"></span>
-				</button>
-				<form class="form form-login">
-					<fieldset>
-						<legend>Por favor, acesse preenchendo seu email e senha.</legend>
-						<div class="input-block">
-							<label for="login-email">E-mail</label>
-							<input id="login-email" type="email" required>
-						</div>
-						<div class="input-block">
-							<label for="login-password">Senha</label>
-							<input id="login-password" type="password" required>
-						</div>
-					</fieldset>
-					<button type="submit" class="btn-login">Entrar</button>
-				</form>
+				
+		<a class="row mt-1">
+			<div class="col text-right">
+				<button type="button" id="display-login-form" class="btn btn-link txt-link clicked">LOGIN </button>
 			</div>
-			<div class="form-wrapper">
-				<button type="button" class="switcher switcher-signup btn-form">
-					Cadastrar-se
-					<span class="underline"></span>
-				</button>
-				<form class="form form-signup">
-					<fieldset>
-						<legend>Por favor, preencha com seu email, senha e confirmação de senha para Cadastrar-se.
-						</legend>
-						<div class="input-block">
-							<input id="signup-name" type="text" placeholder="Nome" required>
-							<!-- <label for="signup-nome">Nome</label> -->
-						</div>
-						<div class="input-block">
-							<input id="signup-city" type="text" placeholder="Cidade" required>
-							<!-- <label for="signup-city">Cidade</label> -->
-						</div>
-						<div class="input-block">
-							<input id="signup-email" type="email" placeholder="E-mail" required>
-							<!-- <label for="signup-email">E-mail</label> -->
-						</div>
-						<div class="input-block">
-							<input id="signup-password" type="password" placeholder="Senha (mínimo 6 caracteres)"
-								required>
-							<!-- <label for="signup-password">Senha</label> -->
-						</div>
-					</fieldset>
-					<button type="submit" class="btn-signup">Cadastrar</button>
-				</form>
+			<div class="col text-left">
+				<button type="button" id="display-signup-form" class="btn btn-link txt-link">CADASTRO </button>
 			</div>
-		</div>
-	</section>
+		</a>
+			
+		<form id="login-form" class="fade in">		
+			<div class="row justify-content-center">
+				<div class="col-10 col-sm-6 col-lg-4 p-4">
+					<div class="form-group">
+						<input type="email" class="form-control" id="login-email" placeholder="Digite seu email">
+					</div>
+
+					<div class="form-group">
+						<input type="password" class="form-control" id="login-password" placeholder="Digite sua senha">
+					</div>
+					<button type="submit" class="btn btn-green btn-block login-btn">ENTRAR</button>
+				</div>
+			</div>
+		</form>
+		
+
+		<form id="signup-form" class="fade d-none">
+			<div class="row justify-content-center">
+				<div class="col-10 col-sm-6 col-lg-4 py-4">
+					<div class="form-group">
+							<input type="text" class="form-control text-default" id="signup-name" placeholder="Nome">
+					</div>
+					<div class="form-group">
+							<input type="text" class="form-control text-default" id="signup-city" placeholder="Cidade">
+					</div>
+					<div class="form-group">
+							<input type="email" class="form-control text-default" id="signup-email" placeholder="Digite seu email">
+					</div>
+					<div class="form-group">
+							<input type="password" class="form-control text-default" id="signup-password" placeholder="Digite sua senha">
+					</div>
+					<button type="submit" class="btn btn-green btn-block signup-btn">CADASTRAR-SE</button>
+				</div>
+			</div>
+		</form>
+		
+	</div>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 	<script src="src/auth-signup.js"></script>
 	<script src="src/login-signup.js"></script>
-
 </body>
 
 </html>
