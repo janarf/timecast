@@ -48,22 +48,10 @@
   text-align: center;
 }
 
-.line {
-	margin-top: 2rem;
-	margin-bottom: 2rem;
-}
-
-.btncateg {
-	margin-left: 2rem;
-	margin-right: 2rem;
-	width: 7rem;
-	height: 7rem;
-}
-
 .sidepanel {
-	margin: 0 0 10px;
-	padding: 14px 18px 7px;
-	border: 2px solid #ccc;
+	margin: 1rem;
+	padding: 1rem;
+	
 }
 .widget_sized ul {
 	padding-bottom: 13px;
@@ -74,8 +62,8 @@
 }
 .widget_sized a label {
 	box-sizing: border-box;
-	width: 100px;
-	height: 100px;
+	width: 5rem;
+	height: 5rem;
 	display: block;
 	text-transform: uppercase;
 	text-align: center;
@@ -88,8 +76,8 @@
 	-webkit-transition: border 0.3s ease-in-out;
 	cursor: pointer;
 	border-radius: 1rem;
-	margin-left: 1rem;
-	margin-right: 1rem;
+	margin-left: 0,5rem;
+	margin-right: 0,5rem;
 }
 
 .widget_sized a label:hover {
@@ -109,3 +97,7 @@
 .widget_sized a {
 	text-decoration: none;
 }
+/* 
+.btn-categories {
+	margin: 1rem;
+} */
