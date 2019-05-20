@@ -12,29 +12,36 @@ function getRouteTime(waypointString0, waypointString1) {
 &mode=fastest;${mean};traffic:enabled`)
         .then(res => res.json())
         .then(res => {
-          if (mean == 'car') {
+          if (mean === 'car') {
+            if (!res.response) {
+              console.log('deuruim');
+              showModal();
+
+            }
             localStorage.setItem(mean, res.response.route[0].summary.trafficTime);
             $(`#${mean}-time`).html(
               moment.utc(res.response.route[0].summary.trafficTime * 1000)
-                .format('HH:mm'))
+                .format('HH:mm'));
           } else {
             localStorage.setItem(mean, res.response.route[0].summary.baseTime)
             $(`#${mean}-time`).html(
               moment.utc(res.response.route[0].summary.baseTime * 1000)
-                .format('HH:mm'))
+                .format('HH:mm'));
           }
-        })
+        }
+        );
     }
-  )
+  );
 }
 
 function getRoute(transportMean) {
-
-  let userPoint = `geo!${localStorage.getItem("latitude")},${localStorage.getItem("longitude")}`
+  let userPoint = `geo!${localStorage.getItem('latitude')},${localStorage.getItem('longitude')}`;
 
   fetch(`https://geocoder.api.here.com/6.2/geocode.json?app_id=lT3yqAJmOo0tSCEDAY24&app_code=fd9_LnoGgmj6hkcLl2RhNQ&searchtext=${$("#address-search-bar").val().replace(/(-)|(,)/g, '').split(' ').join('+')}`)
-    .then(res => res.json()).then(result => {
-      let destiny = `geo!${result.Response.View[0].Result[0].Location.DisplayPosition.Latitude},${result.Response.View[0].Result[0].Location.DisplayPosition.Longitude}`
+    .then(res => res.json())
+    .then(result => {
+
+      let destiny = `geo!${result.Response.View[0].Result[0].Location.DisplayPosition.Latitude},${result.Response.View[0].Result[0].Location.DisplayPosition.Longitude}`;
 
       getRouteTime(userPoint, destiny);
 
@@ -65,19 +72,21 @@ function getRoute(transportMean) {
           startPoint = route.waypoint[0].mappedPosition;
           endPoint = route.waypoint[1].mappedPosition;
           var routeLine = new H.map.Polyline(linestring, {
-            style: { strokeColor: 'blue', lineWidth: 10 }
+            style: {
+              strokeColor: 'blue',
+              lineWidth: 10
+            }
           });
           var endMarker = new H.map.Marker({
             lat: endPoint.latitude,
             lng: endPoint.longitude
           });
           var startMarker = new H.map.Marker({
-            lat: localStorage.getItem("latitude"),
-            lng: localStorage.getItem("longitude")
+            lat: localStorage.getItem('latitude'),
+            lng: localStorage.getItem('longitude')
           });
           map.addObjects([startMarker, routeLine, endMarker]);
           map.setViewBounds(routeLine.getBounds());
-
         }
       };
       var router = platform.getRoutingService();
@@ -85,10 +94,11 @@ function getRoute(transportMean) {
         function (error) {
           alert(error.message);
         });
-    })
+    }
+    );
 }
 
-getLocation()
+getLocation();
 
 var platform = new H.service.Platform({
   'app_id': 'lT3yqAJmOo0tSCEDAY24',
@@ -99,13 +109,13 @@ let map = new H.Map(
   $('#mapContainer')[0],
   defaultLayers.normal.map, {
     zoom: 14,
-    center: { lat: localStorage.getItem("latitude"), lng: localStorage.getItem("longitude") }
+    center: { lat: localStorage.getItem('latitude'), lng: localStorage.getItem('longitude') }
   });
 var marker = new H.map.Marker({
-  lat: localStorage.getItem("latitude"),
-  lng: localStorage.getItem("longitude")
+  lat: localStorage.getItem('latitude'),
+  lng: localStorage.getItem('longitude')
 });
-map.addObjects([marker])
+map.addObjects([marker]);
 
 var ui = H.ui.UI.createDefault(map, defaultLayers);
 
