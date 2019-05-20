@@ -73,7 +73,7 @@ function templateStringTime(timeSeconds) {
       timeHoursMin[1] = '';
     }
   } else { timeHoursMin[0] = '' }
-  $('#time-sugestion').html(`${pronoun}${timeHoursMin[0]} ${hour}${conective}${timeHoursMin[1]} ${min}`)
+  $('#time-sugestion').html(`${pronoun}${timeHoursMin[0]} ${hour}${conective}${timeHoursMin[1]} ${min}`);
 }
 
 
