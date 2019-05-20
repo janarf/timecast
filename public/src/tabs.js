@@ -15,5 +15,4 @@ displayWayContent.addEventListener("click", () => {
 
     timerTab.classList.remove("clicked-tab");
     wayTab.classList.add("clicked-tab");
-
 });

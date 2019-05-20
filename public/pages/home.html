@@ -42,7 +42,97 @@
 </head>
 
 <body class="white-bg">
-  <div id="maps">
+  <header class="container-fluid bg-nav">
+    <nav class='navbar col-md-8 mx-auto py-3'>
+      <a class=''><img class='logo-nav' src='../assets/logo-neg-tcast.png'></a>
+      <div class='ml-auto d-flex flex-column'>
+        <a href='#'><i class="fas fa-search text-white nav-items"></i></a>
+        <!-- <p id='user-name-p' class='user-name text-white text-break strong m-0'></p> -->
+      </div>
+      <div class="ml-3 d-flex flex-column">
+        <a href='#'><i id="logout-btn" class='fas fa-sign-out-alt text-white nav-items'></i></a>
+        <!-- <p id='logout-label' class='text-white text-break strong m-0'>Sair</p> -->
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <ul class="nav nav-tabs col-md-8 mx-auto nav-justified" id="myTab" role="tablist">
+      <li class="nav-item bg-tab">
+        <a class="nav-link active clicked-tab txt-tab border-0" id="way-tab" data-toggle="tab" href="#way" role="tab"
+          aria-controls="way" aria-selected="true">TRAJETO</a>
+      </li>
+      <li class="nav-item bg-tab">
+        <a class="nav-link txt-tab border-0" id="timer-tab" data-toggle="tab" href="#timer" role="tab"
+          aria-controls="timer" aria-selected="false">TEMPO</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <!-- Trejeto -->
+      <div class="tab-pane show active" id="way" role="tabpanel" aria-labelledby="home-tab">
+
+        <div id="maps">
+          <div>
+            <div class="position-absolute w-100 search-bar-div ">
+              <div class="mx-auto mt-2 search-bar ">
+                <i class="fas fa-map-marker-alt position-absolute icon-small ml-2"></i>
+                <input type="text" class="form-control position-relative px-4" name="" id="address-search-bar"
+                  placeholder="Digite aqui seu destino">
+
+                <i class="fas fa-chevron-circle-right icon-small position-absolute position-right" id="search-go"></i>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="position-relative map-container " id="mapContainer"></div>
+          <section class="container w-100 invisible transport">
+            <div class="d-flex flex-row justify-content-around mx-2 ">
+              <div class=" px-3 py-2 transport-button" id="car">
+                <div class="d-flex flex-column">
+                  <div class="align-self-bottom">
+                    <div class="text-center">
+                      <i class="fas fa-car"></i>
+                    </div>
+                    <p class="text-center m-0 p-0 time-text" id="car-time">00:00</p>
+                  </div>
+                </div>
+              </div>
+              <div class=" px-3 py-2 transport-button" id="bicycle">
+                <div class="d-flex flex-column">
+                  <div class="align-self-bottom">
+                    <div class="text-center">
+                      <i class="fas fa-bicycle"></i>
+                    </div>
+                    <p class="text-center m-0 p-0 time-text" id="bicycle-time">00:00</p>
+                  </div>
+                </div>
+              </div>
+              <div class=" px-3 py-2 transport-button" id="pedestrian">
+                <div class="d-flex flex-column">
+                  <div class="align-self-bottom">
+                    <div class="text-center">
+                      <i class="fas fa-walking"></i>
+                    </div>
+                    <p class="text-center m-0 p-0 time-text" id="pedestrian-time">00:00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <button disabled="true" type="submit" class="btn btn-green btn-block signup-btn w-75 mx-auto mt-4"
+            id="confirm">CONFIRMAR</button>
+        </div>
+      </div>
+
+
+      <div class="tab-pane" id="timer" role="tabpanel" aria-labelledby="profile-tab">...</div>
+    </div>
+
+  </main>
+
+  <!-- <div id="maps">
     <div>
       <div class="position-absolute w-100 search-bar-div ">
         <div class="mx-auto mt-2 search-bar ">
@@ -94,7 +184,7 @@
 
     <button disabled="true" type="submit" class="btn btn-green btn-block signup-btn w-75 mx-auto mt-4"
       id="confirm">CONFIRMAR</button>
-  </div>
+  </div> -->
 
   <div class="d-none" id="sugestions">
     <p class="m-0 text-center" id="time-sugestion"></p>
@@ -116,7 +206,8 @@
 
   <script src="../src/podcasts.js"></script>
 
-  <script src="auth-login-signup.js"></script>
+  <script src="../src/auth-login-signup.js"></script>
+  <script src="../src/tabs.js"></script>
 
 </body>
 
