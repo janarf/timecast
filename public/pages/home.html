@@ -47,8 +47,11 @@
       <div class="position-absolute w-100 search-bar-div ">
         <div class="mx-auto mt-2 search-bar ">
           <i class="fas fa-map-marker-alt position-absolute icon-small ml-2"></i>
-          <input type="text" class="form-control position-relative pl-4" name="" id="address-search-bar"
+          <input type="text" class="form-control position-relative px-4" name="" id="address-search-bar"
             placeholder="Digite aqui seu destino">
+
+          <i class="fas fa-chevron-circle-right icon-small position-absolute position-right" id="search-go"></i>
+
         </div>
       </div>
     </div>
@@ -89,8 +92,8 @@
       </div>
     </section>
 
-    <button type="submit" class="btn btn-success btn-lg btn-block w-75 mx-auto mt-4 disabled btn-confirm"
-      id="confirm">Confirmar</button>
+    <button type="submit" class="btn btn-green btn-block signup-btn w-75 mx-auto mt-4 d-none"
+      id="confirm">CONFIRMAR</button>
   </div>
 
   <div class="d-none" id="sugestions">
@@ -106,6 +109,8 @@
   <script src="../src/getlocation.js"></script>
   <script src="../src/genreconst.js"></script>
   <script src="../src/maps.js"></script>
+  <script src="../src/mapsDOM.js"></script>
+
   <script src="../src/podcasts.js"></script>
 
 </body>
