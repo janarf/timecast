@@ -88,13 +88,6 @@ function getRoute(transportMean) {
     })
 }
 
-
-function searchDestiny() {
-  $("#address-search").on('click', (e) => {
-    e.preventDefault();
-  })
-}
-
 getLocation()
 
 var platform = new H.service.Platform({
@@ -115,7 +108,6 @@ var marker = new H.map.Marker({
 map.addObjects([marker])
 
 var ui = H.ui.UI.createDefault(map, defaultLayers);
-
 
 $("#address-search-bar").keypress((e) => {
   if (e.which == 13) {
