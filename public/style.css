@@ -6,9 +6,13 @@ body {
 
 .btn-green {
     background-color: #19eea1;
-    color: #5f6372;
+    color: hsl(227, 9%, 41%);
     font-weight: 500;
     font-size: 1em;
+}
+
+.btn-green:hover {
+ color: hsl(227, 9%, 41%);
 }
 
 .border {

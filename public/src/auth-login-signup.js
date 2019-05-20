@@ -15,7 +15,6 @@ $(document).ready(function () {
     event.preventDefault();
     const name = $("#signup-name").val();
     const email = $("#signup-email").val();
-    console.log("foi", email)
     const password = $("#signup-password").val();
     firebase
       .auth()
@@ -33,7 +32,6 @@ $(document).ready(function () {
   $("#login-btn").click(function () {
     event.preventDefault();
     const email = $("#login-email").val();
-    console.log("sim", email)
     const password = $("#login-password").val();
 
     firebase
