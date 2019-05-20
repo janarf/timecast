@@ -9,7 +9,7 @@ function podcastsData(myPodcasts, time) {
   });
   Promise.all(podcastPromise)
     .then(results => {
-      const arrayEpisodes = results.reduce(flatten, [])
+      const arrayEpisodes = shuffleArray(results.reduce(flatten, []));
       findMatchingTime(arrayEpisodes, time)
         .forEach(podcast => {
           $('#podcasts-container').append(podcastTemplateString(podcast.id))
@@ -76,4 +76,13 @@ function templateStringTime(timeSeconds) {
   $('#time-sugestion').html(`${pronoun}${timeHoursMin[0]} ${hour}${conective}${timeHoursMin[1]} ${min}`);
 }
 
+function shuffleArray(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array
+}
 
