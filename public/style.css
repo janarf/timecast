@@ -58,6 +58,41 @@ body {
     background: #eafff7;
 }
 
+.bg-nav {
+    background-color: #5f6372;
+}
+
+.logo-nav {
+    width: auto;
+    height: 3em;
+}
+
+.text-white {
+    color: white;
+}
+
+.nav-items{
+    font-size: 1.3em;
+}
+
+.nav-tabs > li > a.active {
+    background-color: #19eea1 !important
+}
+
+.bg-tab {
+    background-color: #D3D7E1
+}
+
+.txt-tab{
+    color: #5f6372;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.txt-tab:hover{
+    color: white !important;
+}
+
 /* JANA */
 .map-container {
 	width: 100%; 
