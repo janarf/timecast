@@ -1,8 +1,8 @@
-# timecast
+# TimeCast
 
-Projeto Timecast <Laboratoria>
+Projeto TimeCast <Laboratoria>
 
-[Link - Timecast](https://timecast-1557870834786.firebaseapp.com/)
+[Link - TimeCast](https://timecast-1557870834786.firebaseapp.com/)
 
 ## Índice
 
@@ -23,7 +23,7 @@ A organização do projeto foi feita através do [Trello](https://trello.com/b/X
 Determinamos as necessidades básicas para a completude do projeto inicialmente, depois especificamos de uma forma mais detalhada cada funcionalidade dividindo-as pelo grupo. O trabalho coletivo desmonstrou-se essencial à conclusão do projeto, bem como as horas de hacking em conjunto.
 
 ## Definição do produto
-O Timecast é uma aplicação voltada para otimização do tempo de quem escuta podcasts ou quiser escutá-los baseado no tempo determinado pelo usuário, seja ele pelo percuso escolhido ou pelo tempo inputado.
+O TimeCast é uma aplicação voltada para otimização do tempo de quem escuta podcasts ou quiser escutá-los baseado no tempo determinado pelo usuário, seja ele pelo percuso escolhido ou pelo tempo inputado.
 
 Através de pesquisa feita na internet na definição do produto, consultamos a pesquisa feita pela Associação Brasileira de Podcasters e retiramos dados para elaboração do mesmo e do perfis dos usuários. Abaixo segue os links do site e da pesquisa realizada em 2018:
  * [Site ABPOD - Associação Brasileira de Podcasters](http://abpod.com.br/)
@@ -45,19 +45,21 @@ Através de pesquisa feita na internet na definição do produto, consultamos a 
 
 DECLARAÇÕES DE PROBLEMAS
 
-[Persona] precisa de [necessidade], porque/para [insight]
+**[Persona]** precisa de **[necessidade]**, porque/para **[insight]**
 
 Roger, estudante, precisa de informações da área de TI para mudar de área.
 Roger, estudante, precisa de aplicativos/serviços web gratuitos pq não tem dinheiro.
 Roger, precisa se conectar com pessoas de interesse em comum para compartilhar suas preferencias.
+
 Alan, bancário, precisa estar informado sobre o mundo financeiro para concluir mba e poder participar processos seletivos.
 Alan, precisa otimizar seu tempo enquanto se exercita para manter-se atualizado. 
+
 Laura, empresária, precisa utilizar do seu tempo de locomoção para manter-se atualizada
 Laura, precisa de indicações de conteúdo em áudio para otimizar sua rotina.
 
 ## Protótipo
 
-O protótipo da Timecast, pode ser visualizado no link abaixo:
+O protótipo da TimeCast, pode ser visualizado no link abaixo:
 
 [Protótipo da aplicação](https://marvelapp.com/5i396b0/screen/56939943)
 
@@ -65,10 +67,10 @@ O protótipo da Timecast, pode ser visualizado no link abaixo:
   A pesquisa foi feita com 30 usuários(as) e os dados foram coletados através de [Formulário de pesquisa](https://forms.gle/LEg8wnfvzsFXZmMy8).
 
   Com base nas respostas obtidas, pudemos constatar que:
-  * 80% dos entrevistados(as) ouvem podicasts;
+  * 80% dos entrevistados(as) ouvem podcasts;
   * 46,7% dos entrevistados(as) tem idade entre 18-29 anos e 46,7% entre 30-39 anos;
   * 73,3% dos entrevistados(as) foram do gênero feminino;
-  * A maioria utiliza metrô, carro, se locomove como pedestre e ônibus respectivamente;
+  * A maioria utiliza metrô, carro, se locomove como pedestre e ônibus, respectivamente;
   * 46,7% dos entrevistados passam entre 30 min e 1 hora em cada trajeto, seguido de 23,3% que passam entre 1 h e 1:30;
   * 83,3% dos entrevistados gostarariam/usariam um site que indicasse podcasts para você se informar sobre assuntos do seu interesse baseado no seu tempo de trajeto.
 
