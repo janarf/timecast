@@ -17,7 +17,7 @@ function addClickEventTransport(mean) {
       .removeClass('transport-button');
     map.removeObjects(map.getObjects());
     getRoute(mean);
-  })
+  });
 }
 
 function confirmSearch() {
@@ -31,4 +31,3 @@ function confirmSearch() {
 
 
 transport.forEach(mean => addClickEventTransport(mean));
-
