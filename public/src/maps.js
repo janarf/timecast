@@ -109,30 +109,3 @@ map.addObjects([marker])
 
 var ui = H.ui.UI.createDefault(map, defaultLayers);
 
-$("#address-search-bar").keypress((e) => {
-  if (e.which == 13) {
-    $('.transport').removeClass('invisible');
-    $(`#car`).addClass('transport-button--clicked').removeClass('transport-button');
-    $('#confirm').removeClass('disabled');
-    localStorage.setItem('transport', 'car');
-    getRoute('car');
-  };
-});
-
-function addClickEventTransport(mean) {
-  $(`#${mean}`).on('click', () => {
-    transport.filter((element) => element !== mean)
-      .forEach(otherMean => $(`#${otherMean}`)
-        .addClass('transport-button')
-        .removeClass('transport-button--clicked'));
-    localStorage.setItem('transport', mean)
-    $(`#${mean}`).addClass('transport-button--clicked')
-      .removeClass('transport-button');
-
-    map.removeObjects(map.getObjects());
-    getRoute(mean);
-  })
-}
-
-transport.forEach(mean => addClickEventTransport(mean));
-

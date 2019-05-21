@@ -85,24 +85,9 @@ body {
 	font-size:25px;
 }
 .icon-small{
-	z-index: 1000;
+	z-index: 10;
 	color:#5f6372;
-  top:40%;
-}
-
-.btn-confirm,
-.btn-confirm:active,
-.btn-confirm:focus {
-	
-	color: #5f6372;
-	background-color: #19eea1;
-	border: #19eea1;
-	font-weight: 700;
-	font-size: 12px;
-	text-transform: uppercase;
-	-webkit-box-shadow: 4px 3px 5px -1px rgba(0,0,0,0.52);
--moz-box-shadow: 4px 3px 5px -1px rgba(0,0,0,0.52);
-box-shadow: 4px 3px 5px -1px rgba(0,0,0,0.52);
+  	top:40%;
 }
 
 .white-bg{
@@ -110,4 +95,10 @@ box-shadow: 4px 3px 5px -1px rgba(0,0,0,0.52);
 }
 .bold-text{
 	font-weight: 700;
+}
+
+.position-right{
+  z-index: 10;
+  position: absolute;
+  right: 2rem;
 }
