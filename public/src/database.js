@@ -12,3 +12,7 @@ $(document).ready(function () {
     }
   });
 });
+
+function creatUser {
+  database.set
+}

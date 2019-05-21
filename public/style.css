@@ -180,9 +180,9 @@ body {
 
 .undo {
     color: white;
-    font-size: 30px;
-    padding: 3%;
-    border-radius: 100%;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 50%;
     background-color: #19eea1;
 } 
 
