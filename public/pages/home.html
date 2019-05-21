@@ -13,13 +13,11 @@
   <link rel="stylesheet" type="text/css" href="//js.api.here.com/v3/3.0/mapsjs-ui.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
     integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <link href="https://fengyuanchen.github.io/pickerjs/css/picker.css" rel="stylesheet">
   <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon-tcast.png">
   <link rel="stylesheet" type="text/css" media="screen" href="../style.css">
-
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js "
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo "
     crossorigin="anonymous "></script>
@@ -29,12 +27,10 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js "
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM "
     crossorigin="anonymous "></script>
-
   <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script>
-
 
 </head>
 
@@ -50,7 +46,6 @@
       </div>
     </nav>
   </header>
-
   <main id="home-select" class="">
     <ul class="nav nav-tabs mx-auto nav-justified" id="myTab" role="tablist">
       <li class="nav-item bg-tab">
@@ -63,9 +58,7 @@
       </li>
     </ul>
     <div class="tab-content" id="myTabContent">
-      <!-- Trajeto -->
       <div class="tab-pane show active" id="way" role="tabpanel" aria-labelledby="home-tab">
-
         <div id="maps">
           <div>
             <div class="position-absolute w-100 search-bar-div ">
@@ -114,13 +107,10 @@
               </div>
             </div>
           </section>
-
           <button disabled="true" type="submit" class="btn btn-green btn-block signup-btn w-75 col-md-4 mx-auto mt-3"
             id="confirm">CONFIRMAR</button>
         </div>
       </div>
-
-      <!-- Cronômetro -->
       <div class="tab-pane" id="timer" role="tabpanel" aria-labelledby="profile-tab">
         <p class="text-center mt-3">Qual seu tempo disponível?</p>
         <div class="js-inline-picker col-md-5 mx-auto">00:00</div>
@@ -129,22 +119,19 @@
       </div>
     </div>
   </main>
-
   <div class="d-none mt-3 mx-auto" id="sugestions">
     <p class="m-0 text-center" id="time-sugestion"></p>
     <p class="bold-text text-center">Estas são nossas opções pra você:</p>
     <div class="fixed-bottom">
-      <button class="btn btn-circle undo"><i class="fas fa-chevron-left" onclick="history.back(-1)"></i></button>
+      <button class="btn btn-circle undo"><a href="/public/pages/home.html"><i
+            class="fas fa-chevron-left"></i></a></button>
     </div>
   </div>
-
   <section class="container" id="podcasts-container"></section>
-
   <div id="my-modal" class="">
     <button type="button" class="btn btn-primary invisible" data-toggle="modal" data-target="#exampleModal"
       id="btn-modal">
     </button>
-
     <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -155,28 +142,21 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-
-
         </div>
       </div>
     </div>
-
     <div id="dz-root"></div>
     <script src="https://fengyuanchen.github.io/pickerjs/js/picker.js"></script>
     <script src="https://fengyuanchen.github.io/pickerjs/js/main.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="https://files.deezer.com/js/min/dz.js"></script>
-
     <script src="../src/modal.js"></script>
     <script src="../src/getlocation.js"></script>
     <script src="../src/genreconst.js"></script>
     <script src="../src/my-picker.js"></script>
     <script src="../src/maps.js"></script>
     <script src="../src/mapsDOM.js"></script>
-
     <script src="../src/podcasts.js"></script>
-
     <script src="../src/auth-login-signup.js"></script>
     <script src="../src/tabs.js"></script>
 

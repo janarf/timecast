@@ -14,6 +14,7 @@ body {
 .btn-green:disabled{
   background-color: #b6b6b6;
 }
+
 .border {
 	border-radius: 8px;
 }
@@ -175,7 +176,6 @@ body {
 
 .position-right{
   z-index: 10;
-  /* position: relative; */
   right: 1.5rem;
 }
 
@@ -196,22 +196,22 @@ body {
 } 
 
 .fixed-bottom {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 50px;
-    margin-bottom: 50px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px;
+  margin-bottom: 50px;
 }
 
 .undo {
-    color: white;
-    font-size: 2rem;
-    padding: 1rem 2rem;
-    border-radius: 50%;
-    background-color: #19eea1;
+  color: white;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 50%;
+  background-color: #19eea1;
 } 
 
 .load {
-    position: absolute;
-    top: 30%;
-    left: 45%;
+  position: absolute;
+  top: 30%;
+  left: 45%;
 }
