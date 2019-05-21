@@ -34,12 +34,6 @@
   <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script>
-  <!-- <script defer src="/__/firebase/6.0.2/firebase-app.js"></script> -->
-  <!-- include only the Firebase features as you need -->
-  <!-- <script defer src="/__/firebase/6.0.2/firebase-auth.js"></script>
-  <script defer src="/__/firebase/6.0.2/firebase-database.js"></script>
-  <script defer src="/__/firebase/6.0.2/firebase-storage.js"></script> -->
-  <!-- initialize the SDK after all desired features are loaded -->
   <!-- <script defer src="/__/firebase/init.js"></script> -->
 
 </head>
@@ -57,8 +51,8 @@
     </nav>
   </header>
 
-  <main id="home-select">
-    <ul class="nav nav-tabs col-md-8 mx-auto nav-justified" id="myTab" role="tablist">
+  <main id="home-select" class="">
+    <ul class="nav nav-tabs mx-auto nav-justified" id="myTab" role="tablist">
       <li class="nav-item bg-tab">
         <a class="nav-link active clicked-tab txt-tab border-0" id="way-tab" data-toggle="tab" href="#way" role="tab"
           aria-controls="way" aria-selected="true">TRAJETO</a>
@@ -85,8 +79,8 @@
           </div>
           <div class="position-relative map-container " id="mapContainer"></div>
           <section class="container w-100 invisible transport">
-            <div class="d-flex flex-row justify-content-around mx-2 ">
-              <div class=" px-3 py-2 transport-button" id="car">
+            <div class="d-flex flex-row justify-content-center mx-2 ">
+              <div class=" px-3 py-2 transport-button mx-1" id="car">
                 <div class="d-flex flex-column">
                   <div class="align-self-bottom">
                     <div class="text-center">
@@ -96,7 +90,7 @@
                   </div>
                 </div>
               </div>
-              <div class=" px-3 py-2 transport-button" id="bicycle">
+              <div class=" px-3 py-2 transport-button mx-1" id="bicycle">
                 <div class="d-flex flex-column">
                   <div class="align-self-bottom">
                     <div class="text-center">
@@ -106,7 +100,7 @@
                   </div>
                 </div>
               </div>
-              <div class=" px-3 py-2 transport-button" id="pedestrian">
+              <div class=" px-3 py-2 transport-button mx-1" id="pedestrian">
                 <div class="d-flex flex-column">
                   <div class="align-self-bottom">
                     <div class="text-center">
@@ -118,27 +112,24 @@
               </div>
             </div>
           </section>
-          <button disabled="true" type="submit" class="btn btn-green btn-block signup-btn w-75 mx-auto mt-4"
+
+          <button disabled="true" type="submit" class="btn btn-green btn-block signup-btn w-75 col-md-4 mx-auto mt-3"
             id="confirm">CONFIRMAR</button>
         </div>
       </div>
 
-
-
+      <!-- Cronômetro -->
       <div class="tab-pane" id="timer" role="tabpanel" aria-labelledby="profile-tab">
-        <h1>timer</h1>
-        <div class="js-inline-picker">00:00</div>
-        <button type="submit" class="btn btn-green btn-block signup-btn w-75 mx-auto mt-4"
+        <p class="text-center mt-3">Qual seu tempo disponível?</p>
+        <div class="js-inline-picker col-md-5 mx-auto">00:00</div>
+        <button type="submit" class="btn btn-green btn-block signup-btn w-75 col-md-4 mx-auto mt-3"
           id="confirm-time">CONFIRMAR</button>
-
-
-
       </div>
     </div>
 
   </main>
 
-  <div class="d-none pt-2 mx-auto" id="sugestions">
+  <div class="d-none mt-3 mx-auto" id="sugestions">
     <p class="m-0 text-center" id="time-sugestion"></p>
     <p class="bold-text text-center">Estas são nossas opções pra você:</p>
   </div>

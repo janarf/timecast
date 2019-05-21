@@ -21,6 +21,7 @@ function addClickEventTransport(mean) {
 }
 
 function confirmSearch() {
+  map.removeObjects(map.getObjects());
   $('.transport').removeClass('invisible');
   $('#confirm').attr('disabled', false);
   $('#car').addClass('transport-button--clicked').removeClass('transport-button');
