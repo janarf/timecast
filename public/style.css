@@ -96,8 +96,8 @@ body {
 .txt{
     font-family: 'Roboto', sans-serif;
     color: #5f6372;
-    font-size: 0.9em;
-    font-weight: 500;
+    font-size: 1em;
+    font-weight: 400;
 }
 .txt-tab:hover{
     color: white !important;
