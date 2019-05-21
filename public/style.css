@@ -80,7 +80,7 @@ body {
 }
 
 .nav-tabs > li > a.active {
-    background-color: #bacac4 !important
+    background-color: #19eea1 !important
 }
 
 .bg-tab {
@@ -190,3 +190,4 @@ body {
     position: absolute;
     top: 30%;
     left: 45%;
+}
