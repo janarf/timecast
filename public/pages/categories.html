@@ -43,71 +43,71 @@
       </div>
     </nav>
   </header>
+
   <main class="categ">
-    <div class="div-logo">
-      <img class="logo" src="public/assets/logo-tcast.png" />
+    <div class="txt text-center mx-auto mt-4">
+      <h5 class="">Boas vindas!</h5>
+      <p class="">Conte-nos mais sobre as suas preferências.</p><br>
     </div>
-    <div class="div-text">
-      <h5 class="tit-text">Boas vindas!</h5>
-      <p class="tit-text">Conte-nos mais sobre as suas preferências.</p><br>
-    </div>
-    <section class="categ-section">
+
+    <section class="col-md-6 m-0 mx-auto categ-section">
       <div class="sidepanel widget_sized">
-        <ul class="line container">
+
+        <ul class="m-0 mx-auto line container">
           <li>
-            <input type="checkbox" id="id1" class="item_filter size col-sm" value="Top 100">
+            <input type="checkbox" id="id1" class="item_filter size col-sm" value="top100()">
             <a href="javascript:void(0);" class="btn-categories">
               <label for="id1">Top 100</label>
             </a>
           </li>
           <li>
-            <input type="checkbox" id="id2" class="item_filter size col-sm" value="Seleção">
+            <input type="checkbox" id="id2" class="item_filter size col-sm" value="selectionDeezer()">
             <a href="javascript:void(0);" class="btn-categories">
               <label for="id2">Seleção</label>
             </a>
           </li>
           <li>
-            <input type="checkbox" id="id3" class="item_filter size col-sm" value="Cultura">
+            <input type="checkbox" id="id3" class="item_filter size col-sm" value="cultureAndSociety()">
             <a href="javascript:void(0);" class="btn-categories">
               <label for="id3">Cultura</label>
             </a>
           </li>
         </ul>
-        <ul class="line container">
+        <ul class="m-0 mx-auto line container">
           <li>
-            <input type="checkbox" id="id4" class="item_filter size col-sm" value="Educação">
+            <input type="checkbox" id="id4" class="item_filter size col-sm" value="education()">
             <a href="javascript:void(0);" class="btn-categories">
               <label for="id4">Educação</label>
             </a>
           </li>
           <li>
-            <input type="checkbox" id="id5" class="item_filter size col-sm" value="Esportes">
+            <input type="checkbox" id="id5" class="item_filter size col-sm" value="sports()">
             <a href="javascript:void(0);" class="btn-categories">
               <label for="id5">Esportes</label>
             </a>
           </li>
           <li>
-            <input type="checkbox" id="id6" class="item_filter size col-sm" value="Games">
+            <input type="checkbox" id="id6" class="item_filter size col-sm" value="gaming()">
             <a href="javascript:void(0);" class="btn-categories">
               <label for="id6">Games</label>
             </a>
           </li>
         </ul>
-        <ul class="line container">
+        <ul class="m-0 mx-auto line container">
           <li>
-            <input type="checkbox" id="id7" class="item_filter size col-sm" value="Negócios">
+            <input type="checkbox" id="id7" class="item_filter size col-sm" value="business()">
             <a href="javascript:void(0);" class="btn-categories">
               <label for="id7">Negócios</label>
             </a>
           </li>
           <li>
-            <input type="checkbox" id="id8" class="item_filter size col-sm" value="Politica">
+            <input type="checkbox" id="id8" class="item_filter size col-sm" value="newsAndPolitics()">
             <a href="javascript:void(0);" class="btn-categories">
               <label for="id8">Politica</label>
             </a>
           </li>
           <li>
-            <input type="checkbox" id="id9" class="item_filter size col-sm" value="Outros">
+            <input type="checkbox" id="id9" class="item_filter size col-sm" value="others()">
             <a href="javascript:void(0);" class="btn-categories">
               <label for="id9">Outros</label>
             </a>
@@ -116,10 +116,14 @@
       </div>
 
       <div class="btn-confirm">
-        <button type="button" class="btn btn-secondary btn-lg" id="btntest">Enviar</button>
+        <button type="submit" id="btn-categories" class="btn btn-green btn-block signup-btn w-75 col-md-4 mx-auto mt-3">
+          Enviar
+        </button>
       </div>
     </section>
   </main>
+  <script src="../src/podcasts.js"></script>
+  <script src="../src/genreconst.js"></script>
 
   <script src="../src/categories_script.js"></script>
 
