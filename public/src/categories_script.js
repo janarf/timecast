@@ -18,20 +18,32 @@
 // });
 
 
-function getSelectedChbox(frm) {
-  var selchbox = [];        
+// function getSelectedChbox(frm) {
+//   var selchbox = [];        
 
-  var inpfields = frm.getElementsByTagName('input');
-  var nr_inpfields = inpfields.length;
+//   var inpfields = frm.getElementsByTagName('input');
+//   var nr_inpfields = inpfields.length;
 
-  for(var i=0; i<nr_inpfields; i++) {
-    if(inpfields[i].type == 'checkbox' && inpfields[i].checked == true) selchbox.push(inpfields[i].value);
-  }
+//   for(var i=0; i<nr_inpfields; i++) {
+//     if(inpfields[i].type == 'checkbox' && inpfields[i].checked == true) selchbox.push(inpfields[i].value);
+//   }
 
-  return selchbox;
-}
+//   return selchbox;
+// }
 
-document.getElementById('btntest').onclick = function(){
-  var selchb = getSelectedChbox(this.form);
-  alert(selchb);
-}
+// document.getElementById('btntest').onclick = function(){
+//   var selchb = getSelectedChbox(this.form);
+//   alert(selchb);
+// }
+$('#btn-categories').click(() => {
+  let myPodcasts = [];
+  $.each($("input[type='checkbox']:checked"), function () {
+    myPodcasts.push(eval($(this).val()));
+  });
+  myPodcasts = myPodcasts.reduce(flatten, [])
+  let myPodcastsUnique = myPodcasts.filter((item, index) => {
+    return myPodcasts.indexOf(item) >= index;
+  });
+  console.log(myPodcastsUnique);
+
+})
