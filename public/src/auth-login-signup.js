@@ -42,10 +42,11 @@ $(document).ready(function () {
   });
 
   $('#logout-btn').click(function () {
+    event.preventDefault();
     firebase
       .auth()
       .signOut()
-      .then(() => window.location.href = "index.html")
+      .then(() => window.location.href = "../index.html")
       .catch((error) => $('#error-msg').text(error.message));
   });
 });

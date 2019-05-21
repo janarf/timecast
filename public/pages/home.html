@@ -28,13 +28,18 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js "
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM "
     crossorigin="anonymous "></script>
-  <script defer src="/__/firebase/6.0.2/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script>
+  <!-- <script defer src="/__/firebase/6.0.2/firebase-app.js"></script> -->
   <!-- include only the Firebase features as you need -->
-  <script defer src="/__/firebase/6.0.2/firebase-auth.js"></script>
+  <!-- <script defer src="/__/firebase/6.0.2/firebase-auth.js"></script>
   <script defer src="/__/firebase/6.0.2/firebase-database.js"></script>
-  <script defer src="/__/firebase/6.0.2/firebase-storage.js"></script>
+  <script defer src="/__/firebase/6.0.2/firebase-storage.js"></script> -->
   <!-- initialize the SDK after all desired features are loaded -->
-  <script defer src="/__/firebase/init.js"></script>
+  <!-- <script defer src="/__/firebase/init.js"></script> -->
 
 
   <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
@@ -47,11 +52,9 @@
       <a class=''><img class='logo-nav' src='../assets/logo-neg-tcast.png'></a>
       <div class='ml-auto d-flex flex-column'>
         <a href='#'><i class="fas fa-search text-white nav-items"></i></a>
-        <!-- <p id='user-name-p' class='user-name text-white text-break strong m-0'></p> -->
       </div>
       <div class="ml-3 d-flex flex-column">
         <a href='#'><i id="logout-btn" class='fas fa-sign-out-alt text-white nav-items'></i></a>
-        <!-- <p id='logout-label' class='text-white text-break strong m-0'>Sair</p> -->
       </div>
     </nav>
   </header>
@@ -78,13 +81,10 @@
                 <i class="fas fa-map-marker-alt position-absolute icon-small ml-2"></i>
                 <input type="text" class="form-control position-relative px-4" name="" id="address-search-bar"
                   placeholder="Digite aqui seu destino">
-
                 <i class="fas fa-chevron-circle-right icon-small position-absolute position-right" id="search-go"></i>
-
               </div>
             </div>
           </div>
-
           <div class="position-relative map-container " id="mapContainer"></div>
           <section class="container w-100 invisible transport">
             <div class="d-flex flex-row justify-content-around mx-2 ">
@@ -120,12 +120,10 @@
               </div>
             </div>
           </section>
-
           <button disabled="true" type="submit" class="btn btn-green btn-block signup-btn w-75 mx-auto mt-4"
             id="confirm">CONFIRMAR</button>
         </div>
       </div>
-
 
       <div class="tab-pane" id="timer" role="tabpanel" aria-labelledby="profile-tab">...</div>
     </div>
