@@ -1,6 +1,6 @@
 # TimeCast
 
-[Projeto TimeCast](https://timecast-1557870834786.firebaseapp.com/) <Laboratoria>
+[Projeto TimeCast](https://timecast-1557870834786.web.app/) <Laboratoria>
 
 
 ## Índice
