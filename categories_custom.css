@@ -7,12 +7,10 @@
 	margin-bottom: 1rem;
 }
 
-.div-text {
-	display: flex;
-	align-items: center;
+.text {
+	text-align: center;
 	color: #5F6372;
 }
-
 .logo {
 	width: 12em;
 	height: 4.5em;
@@ -60,6 +58,7 @@
 	margin-left: 0,5rem;
 	margin-right: 0,5rem;
 	padding-top: 25px;
+	text-decoration: none;
 }
 
 .widget_sized a label:hover {
