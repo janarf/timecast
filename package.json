@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/janarf/timecast#readme",
   "dependencies": {
-    "eslint": "^5.16.0"
+    "eslint": "^5.16.0",
+    "pickerjs": "^1.2.1"
   }
 }
