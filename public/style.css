@@ -141,11 +141,12 @@ body {
 }
 
 .icon-size{
-	font-size:25px;
+  font-size:25px;
 }
 
 .icon-small{
-	z-index: 10;
+  z-index: 10;
+  color: #5f6372;
   top:40%;
 }
 
