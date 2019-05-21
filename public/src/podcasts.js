@@ -38,7 +38,7 @@ function findMatchingTime(arrayEpisodes, time) {
 }
 
 $('#confirm').click(() => {
-  $('#maps').addClass('d-none');
+  $('#home-select').addClass('d-none');
   $('#sugestions').removeClass('d-none');
   const timeSeconds = Number(localStorage.getItem(localStorage.getItem('transport')));
   templateStringTime(timeSeconds);
@@ -51,9 +51,9 @@ DZ.init({
 });
 
 function podcastTemplateString(id) {
-  return `<iframe scrolling="no" frameborder="0" allowTransparency="true"
+  return `<div class=" text-center mx-auto"><iframe scrolling="no" frameborder="0" allowTransparency="true"
   src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=300&height=300&color=ff0000&layout=dark&size=medium&type=episodes&id=${id}&app_id=349024"
-  width="300" height="300" class="mx-auto"></iframe>`;
+  width="300" height="300"></iframe></div>`;
 }
 
 function templateStringTime(timeSeconds) {

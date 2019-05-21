@@ -16,6 +16,7 @@
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
     integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link href="https://fengyuanchen.github.io/pickerjs/css/picker.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" media="screen" href="../style.css">
 
 
@@ -56,7 +57,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="home-select">
     <ul class="nav nav-tabs col-md-8 mx-auto nav-justified" id="myTab" role="tablist">
       <li class="nav-item bg-tab">
         <a class="nav-link active clicked-tab txt-tab border-0" id="way-tab" data-toggle="tab" href="#way" role="tab"
@@ -122,66 +123,22 @@
         </div>
       </div>
 
-      <div class="tab-pane" id="timer" role="tabpanel" aria-labelledby="profile-tab">...</div>
+
+
+      <div class="tab-pane" id="timer" role="tabpanel" aria-labelledby="profile-tab">
+        <h1>timer</h1>
+        <div class="js-inline-picker">00:00</div>
+        <button type="submit" class="btn btn-green btn-block signup-btn w-75 mx-auto mt-4"
+          id="confirm-time">CONFIRMAR</button>
+
+
+
+      </div>
     </div>
 
   </main>
 
-  <!-- <div id="maps">
-    <div>
-      <div class="position-absolute w-100 search-bar-div ">
-        <div class="mx-auto mt-2 search-bar ">
-          <i class="fas fa-map-marker-alt position-absolute icon-small ml-2"></i>
-          <input type="text" class="form-control position-relative px-4" name="" id="address-search-bar"
-            placeholder="Digite aqui seu destino">
-
-          <i class="fas fa-chevron-circle-right icon-small position-absolute position-right" id="search-go"></i>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="position-relative map-container " id="mapContainer"></div>
-    <section class="container w-100 invisible transport">
-      <div class="d-flex flex-row justify-content-around mx-2 ">
-        <div class=" px-3 py-2 transport-button" id="car">
-          <div class="d-flex flex-column">
-            <div class="align-self-bottom">
-              <div class="text-center">
-                <i class="fas fa-car"></i>
-              </div>
-              <p class="text-center m-0 p-0 time-text" id="car-time">00:00</p>
-            </div>
-          </div>
-        </div>
-        <div class=" px-3 py-2 transport-button" id="bicycle">
-          <div class="d-flex flex-column">
-            <div class="align-self-bottom">
-              <div class="text-center">
-                <i class="fas fa-bicycle"></i>
-              </div>
-              <p class="text-center m-0 p-0 time-text" id="bicycle-time">00:00</p>
-            </div>
-          </div>
-        </div>
-        <div class=" px-3 py-2 transport-button" id="pedestrian">
-          <div class="d-flex flex-column">
-            <div class="align-self-bottom">
-              <div class="text-center">
-                <i class="fas fa-walking"></i>
-              </div>
-              <p class="text-center m-0 p-0 time-text" id="pedestrian-time">00:00</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <button disabled="true" type="submit" class="btn btn-green btn-block signup-btn w-75 mx-auto mt-4"
-      id="confirm">CONFIRMAR</button>
-  </div> -->
-
-  <div class="d-none" id="sugestions">
+  <div class="d-none pt-2 mx-auto" id="sugestions">
     <p class="m-0 text-center" id="time-sugestion"></p>
     <p class="bold-text text-center">Estas são nossas opções pra você:</p>
   </div>
@@ -189,13 +146,16 @@
   <section class="container" id="podcasts-container"></section>
 
   <div id="dz-root"></div>
+  <script src="https://fengyuanchen.github.io/pickerjs/js/picker.js"></script>
+  <script src="https://fengyuanchen.github.io/pickerjs/js/main.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
   <script src="https://files.deezer.com/js/min/dz.js"></script>
 
   <script src="../src/modal.js"></script>
   <script src="../src/getlocation.js"></script>
   <script src="../src/genreconst.js"></script>
-
+  <script src="../src/my-picker.js"></script>
   <script src="../src/maps.js"></script>
   <script src="../src/mapsDOM.js"></script>
 
