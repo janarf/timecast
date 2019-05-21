@@ -16,10 +16,6 @@ $('#confirm-time').click(() => {
   $('#sugestions').removeClass('d-none');
   templateStringTime(timeToSeconds(picker.getDate('HH:mm')));
   podcastsData(myPodcasts, timeToSeconds(picker.getDate('HH:mm')));
-
-})
-
-
-
+});
 
 const timeToSeconds = (string) => string.split(':')[0] * 3600 + string.split(':')[1] * 60;

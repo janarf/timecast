@@ -17,10 +17,11 @@ function addClickEventTransport(mean) {
       .removeClass('transport-button');
     map.removeObjects(map.getObjects());
     getRoute(mean);
-  })
+  });
 }
 
 function confirmSearch() {
+  map.removeObjects(map.getObjects());
   $('.transport').removeClass('invisible');
   $('#confirm').attr('disabled', false);
   $('#car').addClass('transport-button--clicked').removeClass('transport-button');
@@ -30,4 +31,3 @@ function confirmSearch() {
 
 
 transport.forEach(mean => addClickEventTransport(mean));
-
