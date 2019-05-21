@@ -45,6 +45,7 @@ $('#confirm').click(() => {
   podcastsData(myPodcasts, timeSeconds);
 });
 
+
 DZ.init({
   appId: '349024',
   channelUrl: 'localhost:8080'
@@ -57,6 +58,7 @@ function podcastTemplateString(id) {
 }
 
 function templateStringTime(timeSeconds) {
+
   const timeHoursMin = moment.utc(timeSeconds * 1000).format('HH:mm').split(':');
   let min = 'minutos ';
   let pronoun = 'seus ';
