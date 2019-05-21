@@ -187,10 +187,6 @@ body {
 } 
 
 .load {
-    width: 100px;
-    height: 100px;
     position: absolute;
     top: 30%;
     left: 45%;
-    color: blue; 
-}
