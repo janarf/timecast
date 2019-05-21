@@ -160,3 +160,12 @@ body {
     color: #5f6372 !important;
     font-size: 2em;
 } 
+
+.load {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    color: blue; 
+}
