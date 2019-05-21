@@ -1,12 +1,18 @@
 // https://stackoverflow.com/questions/45483759/cannot-load-deezer-api-resources-from-localhost-with-the-fetch-api
+
 const flatten = (a, b) => [...a, ...b];
 const myPodcasts = [1833, 2939, 2785, 3161, 2045, 1773, 91, 4319, 65, 1653, 4363, 9153, 27, 8381, 9955];
 
 function podcastsData(myPodcasts, time) {
+  let loader = `<div class="load spinner-grow text-secondary" style="width: 3rem; height: 3rem;" role="status">
+  <span class="sr-only">Loading...</span></div>`;
+  document.getElementById('podcasts-container').innerHTML = loader;
+
   const podcastPromise = myPodcasts.map(async (podcastId) => {
-    const data = await getData(podcastId);
-    return data;
+  const data = await getData(podcastId);
+  return data;
   });
+
   Promise.all(podcastPromise)
     .then(results => {
       const arrayEpisodes = shuffleArray(results.reduce(flatten, []));
@@ -15,13 +21,18 @@ function podcastsData(myPodcasts, time) {
         matchingPodcasts.forEach(podcast => {
           $('#podcasts-container').append(podcastTemplateString(podcast.id));
         });
-      } else {
+      } 
+      else {
         $('#time-sugestion').html('<p>Não foi encontrado nenhum podcast com a duração desejada:(</p>');
         $('.bold-text').html('Ouça outras opções:');
         arrayEpisodes.forEach(podcast => {
           $('#podcasts-container').append(podcastTemplateString(podcast.id));
         });
       }
+    })
+    .finally(function() {
+      let estilo = document.getElementsByClassName('load');
+      estilo[1].style.visibility = "hidden";
     });
 }
 
@@ -45,6 +56,7 @@ $('#confirm').click(() => {
   podcastsData(myPodcasts, timeSeconds);
 });
 
+
 DZ.init({
   appId: '349024',
   channelUrl: 'localhost:8080'
@@ -57,6 +69,7 @@ function podcastTemplateString(id) {
 }
 
 function templateStringTime(timeSeconds) {
+
   const timeHoursMin = moment.utc(timeSeconds * 1000).format('HH:mm').split(':');
   let min = 'minutos ';
   let pronoun = 'seus ';

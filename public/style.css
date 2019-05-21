@@ -87,7 +87,18 @@ body {
   background-color: #D3D7E1
 }
 
-.txt-tab{
+.txt-tab {
+  color: #5f6372;
+  font-size: 0.9em;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  color: #5f6372;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.txt {
+  font-family: 'Roboto', sans-serif;
   color: #5f6372;
   font-size: 0.9em;
   font-weight: 500;
@@ -183,3 +194,24 @@ body {
   color: #5f6372 !important;
   font-size: 2em;
 } 
+
+.fixed-bottom {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+.undo {
+    color: white;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 50%;
+    background-color: #19eea1;
+} 
+
+.load {
+    position: absolute;
+    top: 30%;
+    left: 45%;
+}

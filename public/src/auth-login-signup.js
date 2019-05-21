@@ -10,6 +10,10 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+const database = firebase.database();
+const usersDatabase = database.ref('users');
+const user = firebase.auth().currentUser;
+
 $(document).ready(function () {
   $("#signup-btn").click(function () {
     event.preventDefault();
@@ -19,15 +23,18 @@ $(document).ready(function () {
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      .then(() => {
-        const user = firebase.auth().currentUser
-        user.updateProfile({
-          displayName: name
-        })
-          .then(() => window.location.href = "./pages/categories.html")
+      .then(response => {
+        const user = response.user;
+        user.updateProfile({ displayName: name });
+        window.location.href = "./pages/categories.html"
+        name = user.displayName;
+        email = user.email;
+        uid = user.uid;
+        createUser(database, name, email, uid);
       })
       .catch(error => $('#error-msg').text(error.message));
-  });
+  })
+
 
   $("#login-btn").click(function () {
     event.preventDefault();
@@ -37,7 +44,9 @@ $(document).ready(function () {
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then(() => window.location.href = "./pages/home.html")
+      .then(() => {
+        window.location.href = "./pages/home.html"
+      })
       .catch(error => $('#error-msg').text(error.message));
   });
 
@@ -49,4 +58,11 @@ $(document).ready(function () {
       .then(() => window.location.href = "../index.html")
       .catch((error) => $('#error-msg').text(error.message));
   });
+
+  function createUser(database, name, email, uid) {
+    database.ref('users/' + uid).set({
+      username: name,
+      email: email,
+    });
+  }
 });
