@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", function(event) { 
+document.addEventListener('DOMContentLoaded', function (event) {
   let loading = document.getElementsByClassName('load');
-  loading[0].style.visibility = "hidden";
+  loading[0].style.visibility = 'hidden';
 });
 
 function getLocation() {

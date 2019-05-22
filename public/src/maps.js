@@ -24,7 +24,7 @@ function getRouteTime(waypointString0, waypointString1) {
               moment.utc(res.response.route[0].summary.trafficTime * 1000)
                 .format('HH:mm'));
           } else {
-            localStorage.setItem(mean, res.response.route[0].summary.baseTime)
+            localStorage.setItem(mean, res.response.route[0].summary.baseTime);
             $(`#${mean}-time`).html(
               moment.utc(res.response.route[0].summary.baseTime * 1000)
                 .format('HH:mm'));
@@ -38,7 +38,10 @@ function getRouteTime(waypointString0, waypointString1) {
 function getRoute(transportMean) {
   let userPoint = `geo!${localStorage.getItem('latitude')},${localStorage.getItem('longitude')}`;
 
-  fetch(`https://geocoder.api.here.com/6.2/geocode.json?app_id=lT3yqAJmOo0tSCEDAY24&app_code=fd9_LnoGgmj6hkcLl2RhNQ&searchtext=${$("#address-search-bar").val().replace(/(-)|(,)/g, '').split(' ').join('+')}`)
+  fetch(`https://geocoder.api.here.com/6.2/geocode.json
+?app_id=lT3yqAJmOo0tSCEDAY24
+&app_code=fd9_LnoGgmj6hkcLl2RhNQ
+&searchtext=${$("#address-search-bar").val().replace(/(-)|(,)/g, '').split(' ').join('+')}`)
     .then(res => res.json())
     .then(result => {
       if (!result.Response.View[0]) showModal();
@@ -100,8 +103,6 @@ function getRoute(transportMean) {
     );
 }
 
-getLocation();
-
 var platform = new H.service.Platform({
   'useCIT': true,
   'app_id': 'lT3yqAJmOo0tSCEDAY24',
@@ -123,4 +124,6 @@ var marker = new H.map.Marker({
 map.addObjects([marker]);
 
 var ui = H.ui.UI.createDefault(map, defaultLayers);
+
+$(document).ready(() => getLocation());
 
