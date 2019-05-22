@@ -32,7 +32,10 @@ $(document).ready(function () {
         uid = user.uid;
         createUser(database, name, email, uid);
       })
-      .catch(error => $('#error-msg').text(error.message));
+      .catch(error => {
+        $('.error-body').html(error); 
+        $('.alert').alert('show'); 
+      })  
   })
 
 
@@ -47,7 +50,12 @@ $(document).ready(function () {
       .then(() => {
         window.location.href = "./pages/home.html"
       })
-      .catch(error => $('#error-msg').text(error.message));
+      .catch(error => {
+        $('.toast-body').html(error.message); 
+        $('.toast').toast('show');
+      })  
+        // alert(error)
+      // $('#error-msg').text(error.message)
   });
 
   $('#logout-btn').click(function () {
@@ -56,7 +64,10 @@ $(document).ready(function () {
       .auth()
       .signOut()
       .then(() => window.location.href = "../index.html")
-      .catch((error) => $('#error-msg').text(error.message));
+      .catch((error) => {
+        $('.toast-body').html(error.message); 
+        $('.toast').toast('show');
+      })  
   });
 
   function createUser(database, name, email, uid) {

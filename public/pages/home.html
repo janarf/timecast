@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <meta name="theme-color" content="#2196F3"> -->
   <title>TimeCast</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
@@ -41,7 +42,7 @@
   <header class="container-fluid bg-nav">
     <nav class='navbar col-md-8 mx-auto py-3'>
       <a class='' href="home.html"><img class='logo-nav' src='../assets/logo-neg-tcast.png'></a>
-      <div class="ml-3 d-flex flex-column">
+      <div class="ml-3 d-flex flex-column align-self-end">
         <a href='#'><i id="logout-btn" class='fas fa-sign-out-alt text-white nav-items'></i></a>
       </div>
     </nav>
@@ -123,7 +124,7 @@
     <p class="m-0 text-center txt" id="time-sugestion"></p>
     <p class="bold-text text-center txt">Estas são nossas opções pra você:</p>
     <div class="fixed-bottom">
-      <button class="btn btn-circle undo"><a href="../public/pages/home.html"><i
+      <button class="btn undo"><a href="./public/pages/home.html"><i
             class="fas fa-chevron-left"></i></a></button>
     </div>
   </div>
@@ -136,11 +137,12 @@
       aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header ">
-            <p class="text-center">Digite um endereço válido</p>
+          <div class="modal-header mt-1 flex-column">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+                <span aria-hidden="true">&times;</span>
             </button>
+            <p class="text-center m-0 font-weight-bold txt">OPS!</p>
+            <p class="text-center m-0 txt">Digite um endereço válido.</p>
           </div>
         </div>
       </div>
