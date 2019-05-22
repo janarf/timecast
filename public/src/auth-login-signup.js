@@ -15,11 +15,11 @@ const usersDatabase = database.ref('users');
 const user = firebase.auth().currentUser;
 
 $(document).ready(function () {
-  $("#signup-btn").click(function () {
+  $('#signup-btn').click(function () {
     event.preventDefault();
-    const name = $("#signup-name").val();
-    const email = $("#signup-email").val();
-    const password = $("#signup-password").val();
+    const name = $('#signup-name').val();
+    const email = $('#signup-email').val();
+    const password = $('#signup-password').val();
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
@@ -32,10 +32,10 @@ $(document).ready(function () {
   })
 
 
-  $("#login-btn").click(function () {
+  $('#login-btn').click(function () {
     event.preventDefault();
-    const email = $("#login-email").val();
-    const password = $("#login-password").val();
+    const email = $('#login-email').val();
+    const password = $('#login-password').val();
 
     firebase
       .auth()
@@ -51,15 +51,8 @@ $(document).ready(function () {
     firebase
       .auth()
       .signOut()
-      .then(() => window.location.href = "../index.html")
+      .then(() => window.location.href = '../index.html')
       .catch((error) => $('#error-msg').text(error.message));
   });
-
-  function createUser(database, name, email, uid) {
-    database.ref('users/' + uid).set({
-      username: name,
-      email: email,
-    });
-  }
 });
 
