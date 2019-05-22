@@ -26,11 +26,7 @@ $(document).ready(function () {
       .then(response => {
         const user = response.user;
         user.updateProfile({ displayName: name });
-        window.location.href = "./pages/categories.html"
-        name = user.displayName;
-        email = user.email;
-        uid = user.uid;
-        createUser(database, name, email, uid);
+        window.location.href = `./pages/categories.html?id=${user.uid}`;
       })
       .catch(error => $('#error-msg').text(error.message));
   })
@@ -44,8 +40,8 @@ $(document).ready(function () {
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then(() => {
-        window.location.href = "./pages/home.html"
+      .then((response) => {
+        window.location.href = `./pages/home.html?id=${response.user.uid}`
       })
       .catch(error => $('#error-msg').text(error.message));
   });
@@ -66,3 +62,4 @@ $(document).ready(function () {
     });
   }
 });
+

@@ -6,6 +6,8 @@ $('#search-go').click(() => {
   if ($('#address-search-bar').val()) confirmSearch();
 });
 
+$('#btn-back').click(() => window.location.reload());
+
 function addClickEventTransport(mean) {
   $(`#${mean}`).on('click', () => {
     transport.filter((element) => element !== mean)
@@ -28,6 +30,8 @@ function confirmSearch() {
   localStorage.setItem('transport', 'car');
   getRoute('car');
 }
+
+
 
 
 transport.forEach(mean => addClickEventTransport(mean));

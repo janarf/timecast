@@ -65,7 +65,7 @@
               <div class="mx-auto mt-2 search-bar">
                 <i class="fas fa-map-marker-alt position-absolute icon-small ml-2"></i>
                 <input type="text" class="form-control position-relative px-4" name="" id="address-search-bar"
-                  placeholder="Digite aqui seu destrino (Endereço - Cidade)" required>
+                  placeholder="Digite aqui seu destino (Endereço - Cidade)" required>
                 <label for="address-search-bar"
                   class="fas fa-chevron-circle-right icon-enter position-absolute position-right btn"
                   id="search-go"></label>
@@ -120,10 +120,10 @@
     </div>
   </main>
   <div class="d-none mt-3 mx-auto" id="sugestions">
-    <p class="m-0 text-center txt" id="time-sugestion"></p>
+    <p class="m-0 text-center txt mx-3" id="time-sugestion"></p>
     <p class="bold-text text-center txt">Estas são nossas opções pra você:</p>
     <div class="fixed-bottom">
-      <button class="btn btn-circle undo"><a href="./home.html"><i class="fas fa-chevron-left"></i></a></button>
+      <button class="btn btn-circle undo" id="btn-back"><i class="fas fa-chevron-left text-white"></i></button>
     </div>
   </div>
   <section class="container" id="podcasts-container"></section>
@@ -149,6 +149,9 @@
     <script src="https://fengyuanchen.github.io/pickerjs/js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="https://files.deezer.com/js/min/dz.js"></script>
+
+    <script src="../src/auth-login-signup.js"></script>
+    <script src="../src/mypodcasts.js"></script>
     <script src="../src/modal.js"></script>
     <script src="../src/getlocation.js"></script>
     <script src="../src/genreconst.js"></script>
@@ -156,7 +159,6 @@
     <script src="../src/maps.js"></script>
     <script src="../src/mapsDOM.js"></script>
     <script src="../src/podcasts.js"></script>
-    <script src="../src/auth-login-signup.js"></script>
     <script src="../src/tabs.js"></script>
 
 </body>

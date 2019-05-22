@@ -1,7 +1,6 @@
 // https://stackoverflow.com/questions/45483759/cannot-load-deezer-api-resources-from-localhost-with-the-fetch-api
 
-const flatten = (a, b) => [...a, ...b];
-const myPodcasts = [1833, 2939, 2785, 3161, 2045, 1773, 91, 4319, 65, 1653, 4363, 9153, 27, 8381, 9955];
+// const myPodcasts = [1833, 2939, 2785, 3161, 2045, 1773, 91, 4319, 65, 1653, 4363, 9153, 27, 8381, 9955];
 
 function podcastsData(myPodcasts, time) {
   let loader = `<div class="load spinner-grow text-secondary" style="width: 3rem; height: 3rem;" role="status">
@@ -9,19 +8,20 @@ function podcastsData(myPodcasts, time) {
   document.getElementById('podcasts-container').innerHTML = loader;
 
   const podcastPromise = myPodcasts.map(async (podcastId) => {
-  const data = await getData(podcastId);
-  return data;
+    const data = await getData(podcastId);
+    return data;
   });
 
   Promise.all(podcastPromise)
     .then(results => {
-      const arrayEpisodes = shuffleArray(results.reduce(flatten, []));
+      const arrayEpisodes = shuffleArray(results.flat());
+      console.log(arrayEpisodes)
       const matchingPodcasts = findMatchingTime(arrayEpisodes, time);
       if (matchingPodcasts.length > 0) {
         matchingPodcasts.forEach(podcast => {
           $('#podcasts-container').append(podcastTemplateString(podcast.id));
         });
-      } 
+      }
       else {
         $('#time-sugestion').html('<p>Não foi encontrado nenhum podcast com a duração desejada:(</p>');
         $('.bold-text').html('Ouça outras opções:');
@@ -30,9 +30,9 @@ function podcastsData(myPodcasts, time) {
         });
       }
     })
-    .finally(function() {
+    .finally(function () {
       let estilo = document.getElementsByClassName('load');
-      estilo[1].style.visibility = "hidden";
+      estilo[1].style.visibility = 'hidden';
     });
 }
 
@@ -44,7 +44,7 @@ function getData(podcastId) {
 
 function findMatchingTime(arrayEpisodes, time) {
   return arrayEpisodes.filter(episode => {
-    return (episode.duration <= (time + 240) && episode.duration >= (time - 240))
+    return (episode.duration <= (time + 240) && episode.duration >= (time - 240));
   });
 }
 
@@ -53,7 +53,7 @@ $('#confirm').click(() => {
   $('#sugestions').removeClass('d-none');
   const timeSeconds = Number(localStorage.getItem(localStorage.getItem('transport')));
   templateStringTime(timeSeconds);
-  podcastsData(myPodcasts, timeSeconds);
+  podcastsData(localStorage.getItem('myPodcasts').split(',').map(Number), timeSeconds);
 });
 
 

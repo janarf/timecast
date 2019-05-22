@@ -41,7 +41,6 @@ function getRoute(transportMean) {
   fetch(`https://geocoder.api.here.com/6.2/geocode.json?app_id=lT3yqAJmOo0tSCEDAY24&app_code=fd9_LnoGgmj6hkcLl2RhNQ&searchtext=${$("#address-search-bar").val().replace(/(-)|(,)/g, '').split(' ').join('+')}`)
     .then(res => res.json())
     .then(result => {
-
       if (!result.Response.View[0]) showModal();
 
       let destiny = `geo!${result.Response.View[0].Result[0].Location.DisplayPosition.Latitude},${result.Response.View[0].Result[0].Location.DisplayPosition.Longitude}`;
