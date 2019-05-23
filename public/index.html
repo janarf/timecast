@@ -4,7 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#5f6372">
 	<title>TimeCast</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="shortcut icon" type="image/x-icon" href="assets/favicon-green.png">
@@ -26,6 +28,19 @@
 				<article class="text-subtitle">Ouça um podcast e otimize seu tempo!</article>
 			</div>
 		</div>
+
+		<!-- Alert -->
+		<div class="col-11 d-flex justify-content-center align-items-center" style="position: absolute; top: 15px;"> 
+			<div class="alert alert-danger alert-dismissible fade" role="alert">
+				<i class="fas fa-exclamation-circle"></i>
+        		<strong>  OPS!</strong>
+				<p class="error-body"></p>
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+		</div>
+
 		<a class="row mt-1">
 			<div class="col text-right">
 				<button type="button" id="display-login-form" class="btn btn-link txt-link clicked">LOGIN </button>
@@ -71,14 +86,6 @@
 				</div>
 			</div>
 		</form>
-
-		<div class="alert alert-danger alert-dismissible fade" role="alert">
-			<strong>Ops!</strong><p class="error-body"></p>
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			</button>
-		</div>
-
 		
 	</div>
 

@@ -91,7 +91,7 @@ body {
 }
 
 .bg-tab {
-  background-color: #D3D7E1
+  background-color: #D3D7E1;
 }
 
 .txt-tab {
@@ -99,9 +99,6 @@ body {
   font-size: 0.9em;
   font-weight: 500;
   font-family: 'Roboto', sans-serif;
-  color: #5f6372;
-  font-size: 0.9em;
-  font-weight: 500;
 }
 
 .txt{
@@ -225,4 +222,15 @@ body {
 
 .must-be-fill{
   font-size: 0.7em;
+  font-weight: 800;
+}
+
+.alert-danger {
+  color: #c71a2c;
+  background-color: white;
+  border-color: #c71a2c;
+}
+
+.x-close {
+  color: #c71a2c;
 }

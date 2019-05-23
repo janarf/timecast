@@ -33,8 +33,8 @@ $(document).ready(function () {
         createUser(database, name, email, uid);
       })
       .catch(error => {
-        $('.error-body').html(error); 
-        $('.alert').alert('show'); 
+        $('.error-body').html(error.message); 
+        $('.alert').addClass('show'); 
       })  
   })
 
@@ -51,11 +51,9 @@ $(document).ready(function () {
         window.location.href = "./pages/home.html"
       })
       .catch(error => {
-        $('.toast-body').html(error.message); 
-        $('.toast').toast('show');
+        $('.error-body').html(error.message); 
+        $('.alert').addClass('show'); 
       })  
-        // alert(error)
-      // $('#error-msg').text(error.message)
   });
 
   $('#logout-btn').click(function () {
@@ -65,9 +63,9 @@ $(document).ready(function () {
       .signOut()
       .then(() => window.location.href = "../index.html")
       .catch((error) => {
-        $('.toast-body').html(error.message); 
-        $('.toast').toast('show');
-      })  
+        $('.error-body').html(error.message); 
+        $('.alert').addClass('show'); 
+      }) 
   });
 
   function createUser(database, name, email, uid) {
