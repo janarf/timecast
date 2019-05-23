@@ -15,22 +15,18 @@ const usersDatabase = database.ref('users');
 const user = firebase.auth().currentUser;
 
 $(document).ready(function () {
-  $("#signup-btn").click(function () {
+  $('#signup-btn').click(function () {
     event.preventDefault();
-    const name = $("#signup-name").val();
-    const email = $("#signup-email").val();
-    const password = $("#signup-password").val();
+    const name = $('#signup-name').val();
+    const email = $('#signup-email').val();
+    const password = $('#signup-password').val();
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then(response => {
         const user = response.user;
         user.updateProfile({ displayName: name });
-        window.location.href = "./pages/categories.html"
-        name = user.displayName;
-        email = user.email;
-        uid = user.uid;
-        createUser(database, name, email, uid);
+        window.location.href = `./pages/categories.html?id=${user.uid}`;
       })
       .catch(error => {
         $('.error-body').html(error.message); 
@@ -39,16 +35,16 @@ $(document).ready(function () {
   })
 
 
-  $("#login-btn").click(function () {
+  $('#login-btn').click(function () {
     event.preventDefault();
-    const email = $("#login-email").val();
-    const password = $("#login-password").val();
+    const email = $('#login-email').val();
+    const password = $('#login-password').val();
 
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then(() => {
-        window.location.href = "./pages/home.html"
+      .then((response) => {
+        window.location.href = `./pages/home.html?id=${response.user.uid}`
       })
       .catch(error => {
         $('.error-body').html(error.message); 
@@ -67,11 +63,5 @@ $(document).ready(function () {
         $('.alert').addClass('show'); 
       }) 
   });
-
-  function createUser(database, name, email, uid) {
-    database.ref('users/' + uid).set({
-      username: name,
-      email: email,
-    });
-  }
 });
+

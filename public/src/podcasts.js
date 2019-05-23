@@ -1,38 +1,32 @@
-// https://stackoverflow.com/questions/45483759/cannot-load-deezer-api-resources-from-localhost-with-the-fetch-api
-
-const flatten = (a, b) => [...a, ...b];
-const myPodcasts = [1833, 2939, 2785, 3161, 2045, 1773, 91, 4319, 65, 1653, 4363, 9153, 27, 8381, 9955];
-
 function podcastsData(myPodcasts, time) {
   let loader = `<div class="load spinner-grow text-secondary" style="width: 3rem; height: 3rem;" role="status">
   <span class="sr-only">Loading...</span></div>`;
   document.getElementById('podcasts-container').innerHTML = loader;
 
   const podcastPromise = myPodcasts.map(async (podcastId) => {
-  const data = await getData(podcastId);
-  return data;
+    const data = await getData(podcastId);
+    return data;
   });
 
   Promise.all(podcastPromise)
     .then(results => {
-      const arrayEpisodes = shuffleArray(results.reduce(flatten, []));
+      const arrayEpisodes = shuffleArray(results.flat());
       const matchingPodcasts = findMatchingTime(arrayEpisodes, time);
       if (matchingPodcasts.length > 0) {
         matchingPodcasts.forEach(podcast => {
           $('#podcasts-container').append(podcastTemplateString(podcast.id));
         });
-      } 
-      else {
-        $('#time-sugestion').html('<p>Não foi encontrado nenhum podcast com a duração desejada:(</p>');
+      } else {
+        $('#time-sugestion').html('<p>Não foi encontrado nenhum podcast com a duração desejada :(</p>');
         $('.bold-text').html('Ouça outras opções:');
         arrayEpisodes.forEach(podcast => {
           $('#podcasts-container').append(podcastTemplateString(podcast.id));
         });
       }
     })
-    .finally(function() {
-      let estilo = document.getElementsByClassName('load');
-      estilo[1].style.visibility = "hidden";
+    .finally(function () {
+      let load = document.getElementsByClassName('load');
+      load[1].style.visibility = 'hidden';
     });
 }
 
@@ -44,23 +38,9 @@ function getData(podcastId) {
 
 function findMatchingTime(arrayEpisodes, time) {
   return arrayEpisodes.filter(episode => {
-    return (episode.duration <= (time + 240) && episode.duration >= (time - 240))
+    return (episode.duration <= (time + 240) && episode.duration >= (time - 240));
   });
 }
-
-$('#confirm').click(() => {
-  $('#home-select').addClass('d-none');
-  $('#sugestions').removeClass('d-none');
-  const timeSeconds = Number(localStorage.getItem(localStorage.getItem('transport')));
-  templateStringTime(timeSeconds);
-  podcastsData(myPodcasts, timeSeconds);
-});
-
-
-DZ.init({
-  appId: '349024',
-  channelUrl: 'localhost:8080'
-});
 
 function podcastTemplateString(id) {
   return `<div class=" text-center mx-auto"><iframe scrolling="no" frameborder="0" allowTransparency="true"
@@ -69,15 +49,14 @@ function podcastTemplateString(id) {
 }
 
 function templateStringTime(timeSeconds) {
-
   const timeHoursMin = moment.utc(timeSeconds * 1000).format('HH:mm').split(':');
   let min = 'minutos ';
   let pronoun = 'seus ';
   let hour = '';
-  let conective = '';
+  let connective = '';
 
   if (Number(timeHoursMin[0]) >= 1) {
-    conective = 'e ';
+    connective = 'e ';
     if (Number(timeHoursMin[0]) === 1) {
       pronoun = 'sua ';
       hour = 'hora ';
@@ -90,13 +69,13 @@ function templateStringTime(timeSeconds) {
     }
     if (timeHoursMin[1] === '00') {
       min = '';
-      conective = '';
+      connective = '';
       timeHoursMin[1] = '';
     }
   } else {
     timeHoursMin[0] = '';
   }
-  $('#time-sugestion').html(`Aproveite ${pronoun}${timeHoursMin[0]} ${hour}${conective}${timeHoursMin[1]} ${min} :)`);
+  $('#time-suggestion').html(`Aproveite ${pronoun}${timeHoursMin[0]} ${hour}${connective}${timeHoursMin[1]} ${min} :)`);
 }
 
 function shuffleArray(array) {
@@ -109,3 +88,17 @@ function shuffleArray(array) {
   return array;
 }
 
+$(document).ready(() => {
+  $('#confirm').click(() => {
+    $('#home-select').addClass('d-none');
+    $('#suggestions').removeClass('d-none');
+    const timeSeconds = Number(localStorage.getItem(localStorage.getItem('transport')));
+    templateStringTime(timeSeconds);
+    podcastsData(localStorage.getItem('myPodcasts').split(',').map(Number), timeSeconds);
+  });
+
+  DZ.init({
+    appId: '349024',
+    channelUrl: 'localhost:5000'
+  });
+});
