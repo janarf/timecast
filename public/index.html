@@ -4,7 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#5f6372">
 	<title>TimeCast</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="shortcut icon" type="image/x-icon" href="./assets/favicon-green.png">
@@ -17,6 +19,7 @@
 
 <body>
 	<div class="container-fluid">
+		
 		<div class="row justify-content-center py-4">
 			<div class="col-10 col-sm-6 col-lg-4 mb-2">
 				<img class="img-fluid" src="./assets/logo-neg-tcast.png" />
@@ -25,6 +28,19 @@
 				<article class="text-subtitle">Ouça um podcast e otimize seu tempo!</article>
 			</div>
 		</div>
+
+		<!-- Alert -->
+		<div class="col-11 d-flex justify-content-center align-items-center" style="position: absolute; top: 15px;"> 
+			<div class="alert alert-danger alert-dismissible fade" role="alert">
+				<i class="fas fa-exclamation-circle"></i>
+        		<strong>  OPS!</strong>
+				<p class="error-body"></p>
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+		</div>
+
 		<a class="row mt-1">
 			<div class="col text-right">
 				<button type="button" id="display-login-form" class="btn btn-link txt-link clicked">LOGIN </button>
@@ -33,7 +49,7 @@
 				<button type="button" id="display-signup-form" class="btn btn-link txt-link">CADASTRO </button>
 			</div>
 		</a>
-		<form id="login-form" class="fade in">
+		<form id="login-form" class="fadef in">
 			<div class="row justify-content-center">
 				<div class="card col-10 col-sm-6 col-lg-4 border p-4">
 					<div class="form-group">
@@ -48,7 +64,7 @@
 				</div>
 			</div>
 		</form>
-		<form id="signup-form" class="fade d-none">
+		<form id="signup-form" class="fadef d-none">
 			<div class="row justify-content-center">
 				<div class="card col-10 col-sm-6 col-lg-4 border p-4">
 					<div class="form-group">
@@ -59,16 +75,18 @@
 					</div>
 					<div class="form-group">
 						<input type="email" class="form-control text-default" id="signup-email"
-							placeholder="Digite seu email" required>
+							placeholder="* Digite seu email" required>
 					</div>
 					<div class="form-group">
 						<input type="password" class="form-control text-default" id="signup-password"
-							placeholder="Digite sua senha (min 6 caracteres)" required>
+							placeholder="* Digite sua senha (min 6 caracteres)" required>
 					</div>
+						<p class="must-be-fill text-muted font-italic">* Campos obrigatórios</p>
 					<button type="submit" class="btn btn-green btn-block" id="signup-btn">CADASTRAR-SE</button>
 				</div>
 			</div>
 		</form>
+		
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -84,6 +102,7 @@
 	<script src="./src/auth-login-signup.js"></script>
 	<script src="./src/config-login-signup.js"></script>
 	<script src="./src/getlocation.js"></script>
+	<script src="./src/modal.js"></script>
 </body>
 
 </html>

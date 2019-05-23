@@ -28,7 +28,10 @@ $(document).ready(function () {
         user.updateProfile({ displayName: name });
         window.location.href = `./pages/categories.html?id=${user.uid}`;
       })
-      .catch(error => $('#error-msg').text(error.message));
+      .catch(error => {
+        $('.error-body').html(error.message); 
+        $('.alert').addClass('show'); 
+      })  
   })
 
 
@@ -43,7 +46,10 @@ $(document).ready(function () {
       .then((response) => {
         window.location.href = `./pages/home.html?id=${response.user.uid}`
       })
-      .catch(error => $('#error-msg').text(error.message));
+      .catch(error => {
+        $('.error-body').html(error.message); 
+        $('.alert').addClass('show'); 
+      })  
   });
 
   $('#logout-btn').click(function () {
@@ -51,8 +57,11 @@ $(document).ready(function () {
     firebase
       .auth()
       .signOut()
-      .then(() => window.location.href = '../index.html')
-      .catch((error) => $('#error-msg').text(error.message));
+      .then(() => window.location.href = "../index.html")
+      .catch((error) => {
+        $('.error-body').html(error.message); 
+        $('.alert').addClass('show'); 
+      }) 
   });
 });
 

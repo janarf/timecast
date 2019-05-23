@@ -11,12 +11,17 @@ body {
   font-size: 1em;
 }
 
+.btn-green:hover {
+  color: white;
+}
+
 .btn-green:disabled{
   background-color: #b6b6b6;
 }
 
 .border {
-	border-radius: 8px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 #5f6372, 0 6px 20px 0 #5f6372;
 }
 
 ::placeholder {
@@ -31,12 +36,12 @@ body {
   font-weight: 500;
 }
 
-.fade {
+.fadef {
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
   
-.fade.in {
+.fadef.in {
   opacity: 1;
 }
 
@@ -66,6 +71,7 @@ body {
 .logo-nav {
   width: auto;
   height: 3em;
+  margin-bottom: 4px;
 }
 
 .text-white {
@@ -85,7 +91,7 @@ body {
 }
 
 .bg-tab {
-  background-color: #D3D7E1
+  background-color: #D3D7E1;
 }
 
 .txt-tab {
@@ -93,16 +99,13 @@ body {
   font-size: 0.9em;
   font-weight: 500;
   font-family: 'Roboto', sans-serif;
-  color: #5f6372;
-  font-size: 0.9em;
-  font-weight: 500;
 }
 
 .txt{
-    font-family: 'Roboto', sans-serif;
-    color: #5f6372;
-    font-size: 1em;
-    font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  color: #5f6372;
+  font-size: 1em;
+  font-weight: 400;
 }
 
 .txt-tab:hover{
@@ -199,12 +202,12 @@ body {
 .fixed-bottom {
   display: flex;
   justify-content: flex-end;
-  margin-right: 50px;
-  margin-bottom: 50px;
+  margin-right: 40px;
+  margin-bottom: 40px;
 }
 
 .undo {
-  color: white;
+  color: white !important;
   font-size: 2rem;
   padding: 1rem 2rem;
   border-radius: 50%;
@@ -215,4 +218,19 @@ body {
   position: absolute;
   top: 30%;
   left: 45%;
+}
+
+.must-be-fill{
+  font-size: 0.7em;
+  font-weight: 800;
+}
+
+.alert-danger {
+  color: #c71a2c;
+  background-color: white;
+  border-color: #c71a2c;
+}
+
+.x-close {
+  color: #c71a2c;
 }

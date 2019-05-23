@@ -1,5 +1,4 @@
 function showModal() {
-  $('#btn-modal').trigger('click');
-  $('.transport').addClass('invisible');
-  $('#confirm').attr('disabled', true);
+  $('.error-body').html('Digite um endereço válido.'); 
+  $('.alert').addClass('show');
 }
