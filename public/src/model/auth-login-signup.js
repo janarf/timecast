@@ -31,8 +31,8 @@ $(document).ready(function () {
       .catch(error => {
         $('.error-body').html(error.message);
         $('.alert').addClass('show');
-      })
-  })
+      });
+  });
 
 
   $('#login-btn').click(function () {
@@ -53,11 +53,12 @@ $(document).ready(function () {
   });
 
   $('#logout-btn').click(function () {
-    event.preventDefault();
     firebase
       .auth()
       .signOut()
-      .then(() => window.location.href = '../index.html')
+      .then(() => {
+        window.location = '../../index.html';
+      })
       .catch((error) => {
         $('.error-body').html(error.message);
         $('.alert').addClass('show');
