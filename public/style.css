@@ -234,3 +234,7 @@ body {
 .x-close {
   color: #c71a2c;
 }
+
+.z-on-top{
+  z-index: 1000;
+}
