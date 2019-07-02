@@ -1,11 +1,11 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyDX3oh7iDQNyPIofhcOKmX_8dE-f9XrtIk",
-  authDomain: "timecast-1557870834786.firebaseapp.com",
-  databaseURL: "https://timecast-1557870834786.firebaseio.com",
-  projectId: "timecast-1557870834786",
-  storageBucket: "timecast-1557870834786.appspot.com",
-  messagingSenderId: "155867587275",
-  appId: "1:155867587275:web:0cce55dd26564658"
+  apiKey: 'AIzaSyDX3oh7iDQNyPIofhcOKmX_8dE-f9XrtIk',
+  authDomain: 'timecast-1557870834786.firebaseapp.com',
+  databaseURL: 'https://timecast-1557870834786.firebaseio.com',
+  projectId: 'timecast-1557870834786',
+  storageBucket: 'timecast-1557870834786.appspot.com',
+  messagingSenderId: '155867587275',
+  appId: '1:155867587275:web:0cce55dd26564658'
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -29,9 +29,9 @@ $(document).ready(function () {
         window.location.href = `./pages/categories.html?id=${user.uid}`;
       })
       .catch(error => {
-        $('.error-body').html(error.message); 
-        $('.alert').addClass('show'); 
-      })  
+        $('.error-body').html(error.message);
+        $('.alert').addClass('show');
+      })
   })
 
 
@@ -47,9 +47,9 @@ $(document).ready(function () {
         window.location.href = `./pages/home.html?id=${response.user.uid}`
       })
       .catch(error => {
-        $('.error-body').html(error.message); 
-        $('.alert').addClass('show'); 
-      })  
+        $('.error-body').html(error.message);
+        $('.alert').addClass('show');
+      })
   });
 
   $('#logout-btn').click(function () {
@@ -57,11 +57,11 @@ $(document).ready(function () {
     firebase
       .auth()
       .signOut()
-      .then(() => window.location.href = "../index.html")
+      .then(() => window.location.href = '../index.html')
       .catch((error) => {
-        $('.error-body').html(error.message); 
-        $('.alert').addClass('show'); 
-      }) 
+        $('.error-body').html(error.message);
+        $('.alert').addClass('show');
+      });
   });
 });
 

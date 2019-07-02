@@ -7,7 +7,7 @@ function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(getPosition);
   } else {
-    console.log('Geolocation is not supported by this browser.');
+    alert('Por favor, ative a geolocalização para utilizar a aplicação');
   }
 }
 function getPosition(userPosition) {

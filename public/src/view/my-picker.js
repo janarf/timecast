@@ -12,7 +12,7 @@ $(document).ready(() => {
     },
   });
 
-  const timeToSeconds = (string) => string.split(':')[0] * 3600 + string.split(':')[1] * 60;
+  const timeToSeconds = string => string.split(':')[0] * 3600 + string.split(':')[1] * 60;
 
   $('#confirm-time').click(() => {
     if (picker.getDate('HH:mm') !== '00:00') {
