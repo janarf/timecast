@@ -12,11 +12,11 @@ $(document).ready(() => {
 
   function addClickEventTransport(mean) {
     $(`#${mean}`).on('click', () => {
-      transport.filter((element) => element !== mean)
+      transport.filter(element => element !== mean)
         .forEach(otherMean => $(`#${otherMean}`)
           .addClass('transport-button')
           .removeClass('transport-button--clicked'));
-      localStorage.setItem('transport', mean)
+      localStorage.setItem('transport', mean);
       $(`#${mean}`).addClass('transport-button--clicked')
         .removeClass('transport-button');
       map.removeObjects(map.getObjects());
